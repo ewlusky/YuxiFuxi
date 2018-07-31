@@ -1,6 +1,17 @@
 {
-    "users": [],
-    "words": [],
-    "userwords": [],
-    "exercises": []
+  "users": [
+    {
+      "name": "Evan Lusky",
+      "password": "Faithful1",
+      "id": 1
+    },
+    {
+      "name": "ewlusky@gmail.com",
+      "password": "password",
+      "id": 2
+    }
+  ],
+  "words": [],
+  "userwords": [],
+  "exercises": []
 }
