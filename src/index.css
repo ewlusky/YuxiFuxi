@@ -20,7 +20,7 @@ body {
   background: black;
   color:white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 50, 0.815), 0 6px 20px 0 rgba(0, 0, 244, 0.19);
-  z-index: 10;
+  
 }
 
 
@@ -28,11 +28,10 @@ body {
     display:flex;
     width: 90vw;
     height: 80vh;
-    z-index: 5;
     position: fixed;
-    top: 10vh;
+    top: -14vh;
     left: 10vh;
-    bottom: 10vh;
+    opacity: .9999;
     background: #cedce7;
     background: -webkit-linear-gradient(45deg,  #010e58 0%,#596a72 100%);
     background: -o-linear-gradient(45deg,  #010e58 0%,#596a72 100%);
@@ -45,6 +44,126 @@ body {
   margin: auto;
   padding: 3vh;
 }
+/* ------------------------Experimental Practice------------------- */
+
+.practiceF{
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+	-webkit-perspective: 1000px;
+          perspective: 1000px;
+  
+}
+
+.Pfront,
+.Pback{
+  
+	-webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	-o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	-webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+	
+}
+
+.Pback{
+  background: #cedce7;
+  background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+  background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+  background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+}
+
+.Pfront:after{
+	position: fixed;
+    top: 0;  /* 0 here and below */
+    left: 0;
+    content: '';
+    display: block;
+    opacity: .6;
+    background-color: #000;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+.practiceFH .Pfront,        /*  these were both hover .CONTAINER:HOVER*/
+.practiceFH .Pback{
+    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    top: 11vh;
+}
+
+
+.Pinner{
+    -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+            transform: translateY(-50%) translateZ(60px) scale(0.94);
+    top: 50%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    outline: 1px solid transparent;
+    -webkit-perspective: inherit;
+            perspective: inherit;
+}
+
+.practiceF .Pback{
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.practiceF .Pfront{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.practiceFH .Pback{             /*  FLIP HOVER */
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.practiceFH .Pfront{          /*   FLIP HOVER */
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+/* .Pfront .Pinner p{
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+} */
+
+/* .front .inner p:after{
+  content: '';
+  width: 4rem;
+  height: 2px;
+  position: absolute;
+  background: #C6D4DF;
+  display: block;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -.75rem;
+} */
+
+/* .front .inner span{
+  color: rgba(255,255,255,0.7);
+  font-family: 'Montserrat';
+  font-weight: 300;
+} */
+
 
 
 /* ------------------Flash Card Styles-------------------- */
@@ -61,7 +180,8 @@ body {
   width: 60vw;
   margin: auto;
   margin-right: 0;
-  
+  z-index: 5;
+      
 }
 
 .front,
@@ -82,6 +202,7 @@ body {
   font-size: 1.5rem;
   height: 35vw;
   width: 60vw;
+
 }
 
 .back{
@@ -95,7 +216,6 @@ body {
 	position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
     width: 100%;
     height: 100%;
     content: '';
@@ -105,6 +225,7 @@ body {
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
     border-radius: 10px;
+
 }
 .container:hover .front,        /*  these were both hover .CONTAINER:HOVER*/
 .container:hover .back{
@@ -215,10 +336,7 @@ body {
 /* -------------------------Expirimental style------------------------ */
 
 
-#figure {
-  overflow: hidden;
-  
-}
+
 
 /* ----------------------------Flash Buttons-------------------------------------- */
 

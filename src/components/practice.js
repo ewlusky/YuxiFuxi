@@ -81,33 +81,41 @@ class Practice extends Component {
         console.log("render state check", this.state)
 
         return (
+            <div className={this.state.finished ? "practiceFH" : "practiceF"}>
+                <div className="practice Pfront" >
+                    <Flashcard card={this.state.currentWord} nextCard={this.nextCard} fin={this.state.finished} />
+                    <div className="score-card">
+                        <div id='figure' className="progress">
+                            <CircularProgressbar
+                                percentage={this.state.percentage}
+                                text={`${this.state.percentage}%`}
+                                background
+                                backgroundPadding={6}
+                                styles={{
+                                    background: {
+                                        fill: '#3e98c7',
+                                    },
+                                    text: {
+                                        fill: '#fff',
+                                        textShadow: '0px 2px 3px rgba(255,255,255,0.5)',
 
-            <div className="practice">
+                                    },
+                                    path: {
+                                        stroke: '#fff',
+                                    },
+                                    trail: { stroke: 'transparent' },
 
-                <Flashcard card={this.state.currentWord} nextCard={this.nextCard} fin={this.state.finished} />
-                <div className="score-card">
-                    <div id='figure' className="progress">
-                        <CircularProgressbar
-                            percentage={this.state.percentage}
-                            text={`${this.state.percentage}%`}
-                            background
-                            backgroundPadding={6}
-                            styles={{
-                                background: {
-                                    fill: '#3e98c7',
-                                },
-                                text: {
-                                    fill: '#fff',
-                                    textShadow: '0px 2px 3px rgba(255,255,255,0.5)',
+                                }}
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className="practice Pback">
+                    <div className="Pinner">
+                        <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/MSjaP1eV5eQ">
+                        </iframe>
 
-                                },
-                                path: {
-                                    stroke: '#fff',
-                                },
-                                trail: { stroke: 'transparent' },
-
-                            }}
-                        />
                     </div>
                 </div>
             </div>

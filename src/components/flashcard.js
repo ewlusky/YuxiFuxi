@@ -12,7 +12,7 @@ const Flashcard = (props) => {
 			</div>
 			<div className="back">
 				<div className="inner">
-					{props.card.definitions? Object.keys(props.card.definitions).map(key => props.card.definitions[key].pinyin + ": " + props.card.definitions[key].translations.map(trans => " " + trans)) : console.log('null')}
+		{props.card.definitions? Object.keys(props.card.definitions).map(key => <div>{props.card.definitions[key].pinyin + ": " + props.card.definitions[key].translations.map(trans => " " + trans)}</div>) : console.log('null')}
 
 				</div>
 				<div className="flash-buttons">
