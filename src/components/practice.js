@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Flashcard from './flashcard'
 import CircularProgressbar from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import API from './APIman'
 
 
 class Practice extends Component {
@@ -27,7 +28,7 @@ class Practice extends Component {
 
     nextCard = (points) => {
         console.log('points', points)
-        let tempState = Object.assign({}, this.state);
+        let tempState = Object.assign({}, this.state);  //watch out for memory leak here
         console.log('next bug', tempState)
         tempState.Cscore += (points - tempState.currentWord.score)
         tempState.currentWord.score = points;
@@ -46,8 +47,25 @@ class Practice extends Component {
                 tempState.flashCrabs.unshift(tempState.currentWord)
             }
         }
-        if (tempState.currentWord.count && points === 1) {
+        if (tempState.currentWord.count === 1 && points === 1) {
+            tempState.currentWord.count += 1;
             tempState.total -= 1;
+            API.getField(`words?simplified=${tempState.currentWord.simplified}`)
+                .then(word => {
+                    if (word.length > 0) {
+                        tempState.currentWord.count += word.count;
+                        API.postWord(tempState.currentWord)
+                            .then(word => {
+                                API.postWordUser(word.id)
+                            })
+                    } else {
+                        API.postWord(tempState.currentWord)
+                            .then(word => {
+                                API.postWordUser(word.id)
+                            })
+                    }
+                })
+
         } else {
             tempState.currentWord.count = 1;
             tempState.curr += 1;
@@ -58,7 +76,30 @@ class Practice extends Component {
         }
         if (tempState.Cscore === tempState.possible) {
             console.log('FINISHED')
-            tempState.finished = true;
+            console.log('word list?', this.state.flashCrabs)
+            const promises = []
+            this.state.flashCrabs.forEach(crab => {
+                const promi = API.getField(`words?simplified=${crab.simplified}`) // search through user list with expand instead concat all these then make a new promise all
+                    .then(word => {
+                        if (word.length > 0) {
+                            crab.count += word.count;
+                            API.postWord(crab)
+                                .then(word => {
+                                    API.postWordUser(word.id)
+                                })
+                        } else {
+                            API.postWord(crab)
+                                .then(word => {
+                                    API.postWordUser(word.id)
+                                })
+                        }
+                    })
+                    promises.push(promi)
+            })
+            Promise.all(promises)
+            .then(() => {
+                this.setState({ finished: true });
+            })
         }
         console.log("set state test", { ...tempState })
         this.setState(tempState);
@@ -112,7 +153,7 @@ class Practice extends Component {
                 </div>
                 <div className="practice Pback">
                     <div className="Pinner">
-                        <iframe width="420" height="315"
+                        <iframe width="768" height="432"
                             src="https://www.youtube.com/embed/MSjaP1eV5eQ">
                         </iframe>
 

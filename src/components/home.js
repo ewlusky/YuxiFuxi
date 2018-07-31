@@ -21,6 +21,7 @@ class Home extends Component {
 
     componentDidMount() {
         this.setState({ practice: false })
+        sessionStorage.setItem('UserId', '1')
     }
 
     makeVocab = () => {
