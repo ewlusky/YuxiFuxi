@@ -48,23 +48,24 @@ class Practice extends Component {
             }
         }
         if (tempState.currentWord.count === 1 && points === 1) {
-            tempState.currentWord.count += 1;
             tempState.total -= 1;
-            API.getField(`words?simplified=${tempState.currentWord.simplified}`)
-                .then(word => {
-                    if (word.length > 0) {
-                        tempState.currentWord.count += word.count;
-                        API.postWord(tempState.currentWord)
-                            .then(word => {
-                                API.postWordUser(word.id)
-                            })
-                    } else {
-                        API.postWord(tempState.currentWord)
-                            .then(word => {
-                                API.postWordUser(word.id)
-                            })
-                    }
-                })
+            const duplicate = this.props.known.filter(entry => entry.word.simplified == tempState.currentWord.simplified)
+            console.log('single word removal test', duplicate)
+            if (duplicate.length > 0) {
+                API.putWordUser(duplicate[0].id, duplicate[0].wordId, duplicate[0].count + 1)
+            } else {
+                API.getField(`words?simplified=${tempState.currentWord.simplified}`)
+                    .then(word => {
+                        if (word.length > 0) {
+                            API.postWordUser(word[0].id)
+                        } else {
+                            API.postWord(tempState.currentWord)
+                                .then(word => {
+                                    API.postWordUser(word.id)
+                                })
+                        }
+                    })
+            }
 
         } else {
             tempState.currentWord.count = 1;
@@ -74,49 +75,48 @@ class Practice extends Component {
             tempState.flashCrabs = this.shuffle(tempState.flashCrabs)
             tempState.curr = 0
         }
-        if (tempState.Cscore === tempState.possible) {
+        if (tempState.Cscore >= tempState.possible) {
+            tempState.finished = true;
             console.log('FINISHED')
             console.log('word list?', this.state.flashCrabs)
-            const promises = []
             this.state.flashCrabs.forEach(crab => {
-                const promi = API.getField(`words?simplified=${crab.simplified}`) // search through user list with expand instead concat all these then make a new promise all
-                    .then(word => {
-                        if (word.length > 0) {
-                            crab.count += word.count;
-                            API.postWord(crab)
-                                .then(word => {
-                                    API.postWordUser(word.id)
-                                })
-                        } else {
-                            API.postWord(crab)
-                                .then(word => {
-                                    API.postWordUser(word.id)
-                                })
-                        }
-                    })
-                    promises.push(promi)
-            })
-            Promise.all(promises)
-            .then(() => {
-                this.setState({ finished: true });
+                const duplicate = this.props.known.filter(entry => entry.word.simplified == crab.simplified)
+                console.log('duplicate check', duplicate)
+                if (duplicate.length > 0) {
+                    API.putWordUser(duplicate[0].id, duplicate[0].wordId, duplicate[0].count + 1)
+                } else {
+                    API.getField(`words?simplified=${crab.simplified}`)
+                        .then(word => {
+                            if (word.length > 0) {
+                                API.postWordUser(word[0].id).then(response => console.log('post user', response))
+                            } else {
+                                API.postWord(crab)
+                                    .then(word => {
+                                        API.postWordUser(word.id)
+                                    })
+                            }
+                        })
+                }
             })
         }
-        console.log("set state test", { ...tempState })
         this.setState(tempState);
         let crabs = this.state.flashCrabs
         let newCard = crabs.pop()
         this.setState({ flashCrabs: crabs });
         this.setState({ currentWord: newCard });
-        console.log("set state test2", this.state)
     }
 
     componentDidMount() {
-        let flash = this.shuffle(this.props.words);
+        let flash = this.shuffle(this.props.words).map(word => ({...word}));
         this.setState({ total: flash.length });
         this.setState({ possible: flash.length });
         const cardOne = flash.pop()
         this.setState({ currentWord: cardOne });
         this.setState({ flashCrabs: flash });
+        if(this.props.skip){
+            this.setState({ finished: true });
+        }
+        
     }
     render() {
         console.log("render state check", this.state)
@@ -154,7 +154,7 @@ class Practice extends Component {
                 <div className="practice Pback">
                     <div className="Pinner">
                         <iframe width="768" height="432"
-                            src="https://www.youtube.com/embed/MSjaP1eV5eQ">
+                            src={`https://www.youtube.com/embed/${this.props.url}`}>
                         </iframe>
 
                     </div>

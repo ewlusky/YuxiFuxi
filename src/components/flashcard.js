@@ -7,12 +7,12 @@ const Flashcard = (props) => {
 				<div className="inner">
 					<p className="flash-simp">{props.fin?  "" : props.card.simplified}</p>
 					<p className="flash-trad">{props.fin? "" : props.card.traditional}</p>
-					<span>{props.card.definitions? Object.keys(props.card.definitions).map(key => props.card.definitions[key].pinyin + " ") : console.log('null')}</span>
+					<span>{props.fin? "" : props.card.definitions? Object.keys(props.card.definitions).map(key => props.card.definitions[key].pinyin + " ") : console.log('null')}</span>
 				</div>
 			</div>
 			<div className="back">
 				<div className="inner">
-		{props.card.definitions? Object.keys(props.card.definitions).map(key => <div>{props.card.definitions[key].pinyin + ": " + props.card.definitions[key].translations.map(trans => " " + trans)}</div>) : console.log('null')}
+		{props.fin? "" : props.card.definitions? Object.keys(props.card.definitions).map(key => <div>{props.card.definitions[key].pinyin + ": " + props.card.definitions[key].translations.map(trans => " " + trans)}</div>) : console.log('null')}
 
 				</div>
 				<div className="flash-buttons">

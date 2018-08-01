@@ -15,6 +15,10 @@ class App extends Component {
     this.setState({ authorized: true });
   }
 
+  deauthorize = () => {
+    this.setState({ authorized: false });
+  }
+
   componentDidMount() {
     if (sessionStorage.getItem('userId') != null){
       this.authorize();
@@ -23,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Header />
+      <Header deauth={() => this.deauthorize()}/>
       <div className="log">
     { this.state.authorized ? <Home /> : <LoginPage auth={() => this.authorize()} /> }
       </div>

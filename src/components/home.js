@@ -7,10 +7,12 @@ var XMLParser = require('react-xml-parser');
 class Home extends Component {
     state = {
         vocab: [],
-        words: [],
-        url: [],
+        Uwords: [],
+        url: "",
         user: [],
-        practice: false
+        practice: false,
+        skip: false,
+        valid: true
     }
 
     handleFieldChange = (evt) => {
@@ -22,33 +24,58 @@ class Home extends Component {
     componentDidMount() {
         this.setState({ practice: false })
         sessionStorage.setItem('UserId', '1')
+        const user = 1
+        API.getField(`wordusers?_expand=word&&userId=${user}`)
+            .then(userWords => {
+                this.setState({ Uwords: userWords });
+            })
     }
 
     makeVocab = () => {
-        fetch('http://video.google.com/timedtext?lang=zh-CN&v=MSjaP1eV5eQ')
+        fetch(`http://video.google.com/timedtext?lang=zh-CN&v=${this.state.url}`)
+            .catch(err => alert(err))
             .then(e => e.text())
             // .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
             .then(transcript => {
+                this.setState({ valid: true });
                 let trans = new XMLParser().parseFromString(transcript);    // Assume xmlText contains the example XML
+                console.log('transcript', trans)
+                if (trans.children.length < 2) {
+                    this.setState({ valid: false });
+                }
                 let promises = []
                 for (let i = 0; trans.children[i].attributes.start < 30; i++) {
                     const block = trans.children[i]
+                    if (block.value.length === 0) {
+                        block.value = "a"
+                    }
                     const timer = block.attributes.start;
                     const prom = fetch(`https://pinyin-rest.pepebecker.com/hanzi/${block.value}`)
+                        .catch(err => console.log('pinyin err', err))
                         .then(e => e.json())
                         .then(vWord => {
                             // console.log("sync test", i)
                             let totalWords = [];
                             let totalVocab = []
                             vWord.forEach(word => {
-                                word["key"] = word.simplified
-                                word["score"] = 0;
-                                word["count"] = 0;
+
                                 if (totalWords.includes(word.simplified)) {
                                     return
                                 }
+                                word["key"] = word.simplified
+                                word["score"] = 0;
+                                word["count"] = 0;
                                 totalWords.push(word.simplified)
-                                totalVocab.push(word)
+                                const duplicate = this.state.Uwords.filter(entry => (word.simplified === entry.word.simplified))
+                                if (duplicate.length > 0) {
+                                    if (duplicate[0].count < 5) {
+                                        word["count"] = 1;
+                                        totalVocab.push(word)
+                                    }
+                                } else {
+                                    totalVocab.push(word)
+                                }
+
                             });
                             return totalVocab;
 
@@ -59,12 +86,23 @@ class Home extends Component {
             })
             .then(promises => {
                 Promise.all(promises)
-                .then(results => {
-                    console.log("promise test", results) // could check for duplicates here by going through lists again
-                    let merged = [].concat.apply([], results);
-                    this.setState({ vocab: merged });
-                    this.setState({ practice: true });
-                })
+                    .catch(err => console.log(err))
+                    .then(results => {
+                        console.log("promise test", results) // could check for duplicates here by going through lists again
+                        let merged = [].concat.apply([], results);
+                        this.setState({ vocab: merged });
+                        if (this.state.valid) {
+                            if (this.state.vocab.length > 0) {
+                                this.setState({ practice: true });
+                            } else {
+                                alert("You already know all the words for this clip!")
+                                this.setState({ skip: true });
+                                this.setState({ practice: true });
+                            }
+                        } else {
+                            alert("This is not a valid video ID")
+                        }
+                    })
             })
 
 
@@ -87,7 +125,7 @@ class Home extends Component {
                     placeholder="everything after v="
                     required="" autoFocus="" />
                 <button onClick={this.makeVocab}>YUXI</button>
-                {this.state.practice && <Practice words={this.state.vocab} />}
+                {this.state.practice && <Practice url={this.state.url} skip={this.state.skip} words={this.state.vocab} known={this.state.Uwords} />}
             </div>
         );
     }

@@ -23,7 +23,7 @@ const LoginPage = (props) => {
             console.log('passcheck', data.password, user[0].password)
             if(data.password === user[0].password){
                 props.auth();
-                sessionStorage.setItem('UserId', user.id)
+                sessionStorage.setItem('UserId', user[0].id)
 
             } else {
                 alert('User name or password not found.')

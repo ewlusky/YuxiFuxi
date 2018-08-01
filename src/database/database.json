@@ -3,15 +3,452 @@
     {
       "name": "Evan Lusky",
       "password": "Faithful1",
-      "id": 1
+      "id": 2
     },
     {
       "name": "ewlusky@gmail.com",
       "password": "password",
-      "id": 2
+      "id": 1
     }
   ],
-  "words": [],
-  "wordusers": [],
+  "words": [
+    {
+      "traditional": "快",
+      "definitions": {
+        "kuai4": {
+          "pinyin": "kuài",
+          "translations": [
+            "rapid",
+            "quick",
+            "speed",
+            "rate",
+            "soon",
+            "almost",
+            "to make haste",
+            "clever",
+            "sharp (of knives or wits)",
+            "forthright",
+            "plainspoken",
+            "gratified",
+            "pleased",
+            "pleasant"
+          ],
+          "zhuyin": "ㄎㄨㄞ`"
+        }
+      },
+      "hsk": 2,
+      "simplified": "快",
+      "key": "快",
+      "score": 1,
+      "count": 1,
+      "id": 1
+    },
+    {
+      "traditional": "全職",
+      "definitions": {
+        "quan2 zhi2": {
+          "pinyin": "quán zhí",
+          "translations": [
+            "full-time job"
+          ],
+          "zhuyin": "ㄑㄩㄢˊ ㄓˊ"
+        }
+      },
+      "simplified": "全职",
+      "key": "全职",
+      "score": 1,
+      "count": 1,
+      "id": 2
+    },
+    {
+      "traditional": "註冊",
+      "definitions": {
+        "zhu4 ce4": {
+          "pinyin": "zhù cè",
+          "translations": [
+            "to register",
+            "to enroll"
+          ],
+          "zhuyin": "ㄓㄨ` ㄘㄜ`"
+        }
+      },
+      "simplified": "注册",
+      "hsk": 5,
+      "key": "注册",
+      "score": 1,
+      "count": 1,
+      "id": 3
+    },
+    {
+      "traditional": "吧",
+      "definitions": {
+        "ba1": {
+          "pinyin": "bā",
+          "translations": [
+            "bar (loanword) (serving drinks, or providing Internet access etc)",
+            "to puff (on a pipe etc)",
+            "(onom.) bang",
+            "abbr. for 貼吧|贴吧[tie1 ba1]"
+          ],
+          "zhuyin": "ㄅㄚ"
+        },
+        "ba5": {
+          "pinyin": "ba",
+          "translations": [
+            "(modal particle indicating suggestion or surmise)",
+            "...right?",
+            "...OK?",
+            "...I presume."
+          ],
+          "zhuyin": "ㄅㄚ˙"
+        }
+      },
+      "hsk": 2,
+      "simplified": "吧",
+      "key": "吧",
+      "score": 1,
+      "count": 1,
+      "id": 4
+    },
+    {
+      "traditional": "手遊",
+      "definitions": {
+        "shou3 you2": {
+          "pinyin": "shǒu yóu",
+          "translations": [
+            "mobile game",
+            "abbr. for 手機遊戲|手机游戏"
+          ],
+          "zhuyin": "ㄕㄡˇ ㄧㄡˊ"
+        }
+      },
+      "simplified": "手游",
+      "key": "手游",
+      "score": 1,
+      "count": 1,
+      "id": 5
+    },
+    {
+      "traditional": "專屬",
+      "definitions": {
+        "zhuan1 shu3": {
+          "pinyin": "zhuān shǔ",
+          "translations": [
+            "to belong or be dedicated exclusively to",
+            "proprietary",
+            "private",
+            "personal"
+          ],
+          "zhuyin": "ㄓㄨㄢ ㄕㄨˇ"
+        }
+      },
+      "simplified": "专属",
+      "key": "专属",
+      "score": 1,
+      "count": 1,
+      "id": 6
+    },
+    {
+      "traditional": "來",
+      "definitions": {
+        "lai2": {
+          "pinyin": "lái",
+          "translations": [
+            "to come",
+            "to arrive",
+            "to come round",
+            "ever since",
+            "next"
+          ],
+          "zhuyin": "ㄌㄞˊ"
+        }
+      },
+      "simplified": "来",
+      "hsk": 1,
+      "key": "来",
+      "score": 1,
+      "count": 1,
+      "id": 7
+    },
+    {
+      "traditional": "即將",
+      "definitions": {
+        "ji2 jiang1": {
+          "pinyin": "jí jiāng",
+          "translations": [
+            "on the eve of",
+            "to be about to",
+            "to be on the verge of"
+          ],
+          "zhuyin": "ㄐㄧˊ ㄐㄧㄤ"
+        }
+      },
+      "simplified": "即将",
+      "hsk": 6,
+      "key": "即将",
+      "score": 1,
+      "count": 1,
+      "id": 8
+    },
+    {
+      "traditional": "領",
+      "definitions": {
+        "ling3": {
+          "pinyin": "lǐng",
+          "translations": [
+            "neck",
+            "collar",
+            "to lead",
+            "to receive",
+            "classifier for clothes, mats, screens etc"
+          ],
+          "zhuyin": "ㄌㄧㄥˇ"
+        }
+      },
+      "simplified": "领",
+      "key": "领",
+      "score": 1,
+      "count": 1,
+      "id": 9
+    },
+    {
+      "traditional": "預",
+      "definitions": {
+        "yu4": {
+          "pinyin": "yù",
+          "translations": [
+            "to advance",
+            "in advance",
+            "beforehand",
+            "to prepare"
+          ],
+          "zhuyin": "ㄩ`"
+        }
+      },
+      "simplified": "预",
+      "key": "预",
+      "score": 1,
+      "count": 1,
+      "id": 10
+    },
+    {
+      "traditional": "高手",
+      "definitions": {
+        "gao1 shou3": {
+          "pinyin": "gāo shǒu",
+          "translations": [
+            "expert",
+            "past master",
+            "dab hand"
+          ],
+          "zhuyin": "ㄍㄠ ㄕㄡˇ"
+        }
+      },
+      "simplified": "高手",
+      "key": "高手",
+      "score": 1,
+      "count": 1,
+      "id": 11
+    },
+    {
+      "traditional": "正版",
+      "definitions": {
+        "zheng4 ban3": {
+          "pinyin": "zhèng bǎn",
+          "translations": [
+            "genuine",
+            "legal",
+            "see also 盜版|盗版[dao4 ban3]"
+          ],
+          "zhuyin": "ㄓㄥ` ㄅㄢˇ"
+        }
+      },
+      "simplified": "正版",
+      "key": "正版",
+      "score": 1,
+      "count": 1,
+      "id": 12
+    },
+    {
+      "traditional": "包",
+      "definitions": {
+        "bao1": {
+          "pinyin": "bāo",
+          "translations": [
+            "to cover",
+            "to wrap",
+            "to hold",
+            "to include",
+            "to take charge of",
+            "to contract (to or for)",
+            "package",
+            "wrapper",
+            "container",
+            "bag",
+            "to hold or embrace",
+            "bundle",
+            "packet"
+          ],
+          "zhuyin": "ㄅㄠ",
+          "classifiers": {
+            "ge4": {
+              "traditional": "個",
+              "simplified": "个",
+              "pinyin": "gè"
+            },
+            "zhi1": {
+              "traditional": "隻",
+              "simplified": "只",
+              "pinyin": "zhī"
+            }
+          }
+        }
+      },
+      "hsk": 3,
+      "simplified": "包",
+      "key": "包",
+      "score": 1,
+      "count": 1,
+      "id": 13
+    },
+    {
+      "traditional": "禮",
+      "definitions": {
+        "li3": {
+          "pinyin": "lǐ",
+          "translations": [
+            "gift",
+            "rite",
+            "ceremony",
+            "propriety",
+            "etiquette",
+            "courtesy"
+          ],
+          "zhuyin": "ㄌㄧˇ",
+          "classifiers": {
+            "fen4": {
+              "traditional": "份",
+              "pinyin": "fèn"
+            }
+          }
+        }
+      },
+      "simplified": "礼",
+      "key": "礼",
+      "score": 1,
+      "count": 1,
+      "id": 14
+    },
+    {
+      "traditional": "上線",
+      "definitions": {
+        "shang4 xian4": {
+          "pinyin": "shàng xiàn",
+          "translations": [
+            "to go online",
+            "to put sth online"
+          ],
+          "zhuyin": "ㄕㄤ` ㄒㄧㄢ`"
+        }
+      },
+      "simplified": "上线",
+      "key": "上线",
+      "score": 1,
+      "count": 1,
+      "id": 15
+    }
+  ],
+  "wordusers": [
+    {
+      "userId": "1",
+      "wordId": 1,
+      "count": 2,
+      "id": 1
+    },
+    {
+      "userId": "1",
+      "wordId": 2,
+      "count": 2,
+      "id": 2
+    },
+    {
+      "userId": "1",
+      "wordId": 3,
+      "count": 2,
+      "id": 3
+    },
+    {
+      "userId": "1",
+      "wordId": 4,
+      "count": 2,
+      "id": 4
+    },
+    {
+      "userId": "1",
+      "wordId": 5,
+      "count": 2,
+      "id": 5
+    },
+    {
+      "userId": "1",
+      "wordId": 6,
+      "count": 2,
+      "id": 6
+    },
+    {
+      "userId": "1",
+      "wordId": 7,
+      "count": 2,
+      "id": 7
+    },
+    {
+      "userId": "1",
+      "wordId": 8,
+      "count": 2,
+      "id": 8
+    },
+    {
+      "userId": "1",
+      "wordId": 9,
+      "count": 2,
+      "id": 9
+    },
+    {
+      "userId": "1",
+      "wordId": 10,
+      "count": 2,
+      "id": 10
+    },
+    {
+      "userId": "1",
+      "wordId": 11,
+      "count": 2,
+      "id": 11
+    },
+    {
+      "userId": "1",
+      "wordId": 12,
+      "count": 2,
+      "id": 12
+    },
+    {
+      "userId": "1",
+      "wordId": 13,
+      "count": 2,
+      "id": 13
+    },
+    {
+      "userId": "1",
+      "wordId": 14,
+      "count": 2,
+      "id": 14
+    },
+    {
+      "userId": "1",
+      "wordId": 15,
+      "count": 2,
+      "id": 15
+    }
+  ],
   "exercises": []
 }

@@ -34,10 +34,25 @@ class apiManager {
         },
         body: JSON.stringify({
           userId: sessionStorage.getItem('UserId'),
-          wordId: wordId
+          wordId: wordId,
+          count: 1
           })
       }).then(e => e.json());
     }
+
+    putWordUser(id, wordId, count) {
+      return fetch(`http://localhost:5002/wordusers/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        userId: sessionStorage.getItem('UserId'),
+        wordId: wordId,
+        count: count
+        })
+    }).then(e => e.json());
+  }
 
 
       
