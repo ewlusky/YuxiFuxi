@@ -107,16 +107,16 @@ class Practice extends Component {
     }
 
     componentDidMount() {
-        let flash = this.shuffle(this.props.words).map(word => ({...word}));
+        let flash = this.shuffle(this.props.words).map(word => ({ ...word }));
         this.setState({ total: flash.length });
         this.setState({ possible: flash.length });
         const cardOne = flash.pop()
         this.setState({ currentWord: cardOne });
         this.setState({ flashCrabs: flash });
-        if(this.props.skip){
+        if (this.props.skip) {
             this.setState({ finished: true });
         }
-        
+
     }
     render() {
         console.log("render state check", this.state)
@@ -153,10 +153,14 @@ class Practice extends Component {
                 </div>
                 <div className="practice Pback">
                     <div className="Pinner">
-                        <iframe width="768" height="432"
-                            src={`https://www.youtube.com/embed/${this.props.url}`}>
-                        </iframe>
-
+                        <div className="resp-container">
+                            <iframe modestbranding="1" start={this.props.start} end={this.props.start + this.props.dur} className="resp-iframe"
+                                src={`https://www.youtube.com/embed/${this.props.url}`}>
+                            </iframe>
+                        </div>
+                    </div>
+                    <div className="wan-div">
+                        <button onClick={this.props.fin} className="btn btn-2 btn-2a wan" >完</button>
                     </div>
                 </div>
             </div>

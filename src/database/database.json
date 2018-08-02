@@ -3,11 +3,15 @@
     {
       "name": "Evan Lusky",
       "password": "Faithful1",
+      "url": "test",
+      "time": 0,
       "id": 2
     },
     {
       "name": "ewlusky@gmail.com",
       "password": "password",
+      "url": "test",
+      "time": 0,
       "id": 1
     }
   ],
@@ -356,98 +360,939 @@
       "score": 1,
       "count": 1,
       "id": 15
+    },
+    {
+      "traditional": "裡",
+      "definitions": {
+        "li3": {
+          "pinyin": "lǐ",
+          "translations": [
+            "lining",
+            "interior",
+            "inside",
+            "internal",
+            "also written 裏|里[li3]"
+          ],
+          "zhuyin": "ㄌㄧˇ"
+        }
+      },
+      "simplified": "里",
+      "hsk": 1,
+      "key": "里",
+      "score": 1,
+      "count": 1,
+      "id": 16
+    },
+    {
+      "traditional": "在",
+      "definitions": {
+        "zai4": {
+          "pinyin": "zài",
+          "translations": [
+            "(located) at",
+            "(to be) in",
+            "to exist",
+            "in the middle of doing sth",
+            "(indicating an action in progress)"
+          ],
+          "zhuyin": "ㄗㄞ`"
+        }
+      },
+      "hsk": 1,
+      "simplified": "在",
+      "key": "在",
+      "score": 1,
+      "count": 1,
+      "id": 17
+    },
+    {
+      "traditional": "湧現",
+      "definitions": {
+        "yong3 xian4": {
+          "pinyin": "yǒng xiàn",
+          "translations": [
+            "to emerge in large numbers",
+            "to spring up",
+            "to emerge prominently"
+          ],
+          "zhuyin": "ㄩㄥˇ ㄒㄧㄢ`"
+        }
+      },
+      "simplified": "涌现",
+      "hsk": 6,
+      "key": "涌现",
+      "score": 1,
+      "count": 1,
+      "id": 18
+    },
+    {
+      "traditional": "用戶",
+      "definitions": {
+        "yong4 hu4": {
+          "pinyin": "yòng hù",
+          "translations": [
+            "user",
+            "consumer",
+            "subscriber",
+            "customer"
+          ],
+          "zhuyin": "ㄩㄥ` ㄏㄨ`"
+        }
+      },
+      "simplified": "用户",
+      "hsk": 6,
+      "key": "用户",
+      "score": 1,
+      "count": 1,
+      "id": 19
+    },
+    {
+      "traditional": "全球",
+      "definitions": {
+        "quan2 qiu2": {
+          "pinyin": "quán qiú",
+          "translations": [
+            "entire",
+            "total",
+            "global",
+            "the (whole) world",
+            "worldwide"
+          ],
+          "zhuyin": "ㄑㄩㄢˊ ㄑㄧㄡˊ"
+        }
+      },
+      "simplified": "全球",
+      "key": "全球",
+      "score": 1,
+      "count": 1,
+      "id": 20
+    },
+    {
+      "traditional": "的",
+      "definitions": {
+        "de5": {
+          "pinyin": "de",
+          "translations": [
+            "of",
+            "~'s (possessive particle)",
+            "(used after an attribute)",
+            "(used to form a nominal expression)",
+            "(used at the end of a declarative sentence for emphasis)"
+          ],
+          "zhuyin": "ㄉㄜ˙"
+        },
+        "di1": {
+          "pinyin": "dī",
+          "translations": [
+            "see 的士[di1 shi4]"
+          ],
+          "zhuyin": "ㄉㄧ"
+        },
+        "di2": {
+          "pinyin": "dí",
+          "translations": [
+            "really and truly"
+          ],
+          "zhuyin": "ㄉㄧˊ"
+        },
+        "di4": {
+          "pinyin": "dì",
+          "translations": [
+            "aim",
+            "clear"
+          ],
+          "zhuyin": "ㄉㄧ`"
+        }
+      },
+      "hsk": 1,
+      "simplified": "的",
+      "key": "的",
+      "score": 1,
+      "count": 1,
+      "id": 21
+    },
+    {
+      "traditional": "遊戲",
+      "definitions": {
+        "you2 xi4": {
+          "pinyin": "yóu xì",
+          "translations": [
+            "game",
+            "to play"
+          ],
+          "zhuyin": "ㄧㄡˊ ㄒㄧ`",
+          "classifiers": {
+            "chang3": {
+              "traditional": "場",
+              "simplified": "场",
+              "pinyin": "chǎng"
+            }
+          }
+        }
+      },
+      "simplified": "游戏",
+      "hsk": 3,
+      "key": "游戏",
+      "score": 1,
+      "count": 1,
+      "id": 22
+    },
+    {
+      "traditional": "隊",
+      "definitions": {
+        "dui4": {
+          "pinyin": "duì",
+          "translations": [
+            "squadron",
+            "team",
+            "group"
+          ],
+          "zhuyin": "ㄉㄨㄟ`",
+          "classifiers": {
+            "ge4": {
+              "traditional": "個",
+              "simplified": "个",
+              "pinyin": "gè"
+            }
+          }
+        }
+      },
+      "simplified": "队",
+      "key": "队",
+      "score": 1,
+      "count": 1,
+      "id": 23
+    },
+    {
+      "traditional": "十",
+      "definitions": {
+        "shi2": {
+          "pinyin": "shí",
+          "translations": [
+            "ten",
+            "10"
+          ],
+          "zhuyin": "ㄕˊ"
+        }
+      },
+      "hsk": 1,
+      "simplified": "十",
+      "key": "十",
+      "score": 1,
+      "count": 1,
+      "id": 24
+    },
+    {
+      "traditional": "億",
+      "definitions": {
+        "yi4": {
+          "pinyin": "yì",
+          "translations": [
+            "100 million"
+          ],
+          "zhuyin": "ㄧ`"
+        }
+      },
+      "simplified": "亿",
+      "hsk": 4,
+      "key": "亿",
+      "score": 1,
+      "count": 1,
+      "id": 25
+    },
+    {
+      "traditional": "三",
+      "definitions": {
+        "san1": {
+          "pinyin": "sān",
+          "translations": [
+            "three",
+            "3"
+          ],
+          "zhuyin": "ㄙㄢ"
+        }
+      },
+      "hsk": 1,
+      "simplified": "三",
+      "key": "三",
+      "score": 1,
+      "count": 1,
+      "id": 26
+    },
+    {
+      "traditional": "突破",
+      "definitions": {
+        "tu1 po4": {
+          "pinyin": "tū pò",
+          "translations": [
+            "to break through",
+            "to make a breakthrough",
+            "to surmount or break the back of (a task etc)",
+            "(of ball sports) to break through a defense"
+          ],
+          "zhuyin": "ㄊㄨ ㄆㄛ`"
+        }
+      },
+      "hsk": 6,
+      "simplified": "突破",
+      "key": "突破",
+      "score": 1,
+      "count": 1,
+      "id": 27
+    },
+    {
+      "traditional": "迎",
+      "definitions": {
+        "ying2": {
+          "pinyin": "yíng",
+          "translations": [
+            "to welcome",
+            "to meet",
+            "to face",
+            "to forge ahead (esp. in the face of difficulties)"
+          ],
+          "zhuyin": "ㄧㄥˊ"
+        }
+      },
+      "simplified": "迎",
+      "key": "迎",
+      "score": 1,
+      "count": 1,
+      "id": 28
+    },
+    {
+      "traditional": "秊",
+      "definitions": {
+        "nian2": {
+          "pinyin": "nián",
+          "translations": [
+            "grain",
+            "harvest (old)",
+            "variant of 年[nian2]"
+          ],
+          "zhuyin": "ㄋㄧㄢˊ"
+        }
+      },
+      "simplified": "年",
+      "hsk": 1,
+      "key": "年",
+      "score": 1,
+      "count": 1,
+      "id": 29
+    },
+    {
+      "traditional": "不斷",
+      "definitions": {
+        "bu4 duan4": {
+          "pinyin": "bù duàn",
+          "translations": [
+            "unceasing",
+            "uninterrupted",
+            "continuous",
+            "constant"
+          ],
+          "zhuyin": "ㄅㄨ` ㄉㄨㄢ`"
+        }
+      },
+      "simplified": "不断",
+      "hsk": 5,
+      "key": "不断",
+      "score": 1,
+      "count": 1,
+      "id": 30
+    },
+    {
+      "traditional": "十",
+      "definitions": {
+        "shi2": {
+          "pinyin": "shí",
+          "translations": [
+            "ten",
+            "10"
+          ],
+          "zhuyin": "ㄕˊ"
+        }
+      },
+      "hsk": 1,
+      "simplified": "十",
+      "key": "十",
+      "score": 1,
+      "count": 1,
+      "id": 31
+    },
+    {
+      "traditional": "紀念日",
+      "definitions": {
+        "ji4 nian4 ri4": {
+          "pinyin": "jì niàn rì",
+          "translations": [
+            "day of commemoration",
+            "memorial day"
+          ],
+          "zhuyin": "ㄐㄧ` ㄋㄧㄢ` ㄖ`"
+        }
+      },
+      "simplified": "纪念日",
+      "key": "纪念日",
+      "score": 1,
+      "count": 1,
+      "id": 32
+    },
+    {
+      "traditional": "電子",
+      "definitions": {
+        "dian4 zi3": {
+          "pinyin": "diàn zǐ",
+          "translations": [
+            "electronic",
+            "electron (particle physics)"
+          ],
+          "zhuyin": "ㄉㄧㄢ` ㄗˇ"
+        }
+      },
+      "simplified": "电子",
+      "key": "电子",
+      "score": 1,
+      "count": 1,
+      "id": 33
+    },
+    {
+      "traditional": "全球",
+      "definitions": {
+        "quan2 qiu2": {
+          "pinyin": "quán qiú",
+          "translations": [
+            "entire",
+            "total",
+            "global",
+            "the (whole) world",
+            "worldwide"
+          ],
+          "zhuyin": "ㄑㄩㄢˊ ㄑㄧㄡˊ"
+        }
+      },
+      "simplified": "全球",
+      "key": "全球",
+      "score": 1,
+      "count": 1,
+      "id": 34
+    },
+    {
+      "traditional": "一",
+      "definitions": {
+        "yi1": {
+          "pinyin": "yī",
+          "translations": [
+            "one",
+            "1",
+            "single",
+            "a (article)",
+            "as soon as",
+            "entire",
+            "whole",
+            "all",
+            "throughout",
+            "\"one\" radical in Chinese characters (Kangxi radical 1)",
+            "also pr. [yao1] for greater clarity when spelling out numbers digit by digit"
+          ],
+          "zhuyin": "ㄧ"
+        }
+      },
+      "hsk": 1,
+      "simplified": "一",
+      "key": "一",
+      "score": 1,
+      "count": 1,
+      "id": 35
+    },
+    {
+      "traditional": "今天",
+      "definitions": {
+        "jin1 tian1": {
+          "pinyin": "jīn tiān",
+          "translations": [
+            "today",
+            "at the present",
+            "now"
+          ],
+          "zhuyin": "ㄐㄧㄣ ㄊㄧㄢ"
+        }
+      },
+      "hsk": 1,
+      "simplified": "今天",
+      "key": "今天",
+      "score": 1,
+      "count": 1,
+      "id": 36
+    },
+    {
+      "traditional": "週年",
+      "definitions": {
+        "zhou1 nian2": {
+          "pinyin": "zhōu nián",
+          "translations": [
+            "anniversary",
+            "annual"
+          ],
+          "zhuyin": "ㄓㄡ ㄋㄧㄢˊ"
+        }
+      },
+      "simplified": "周年",
+      "hsk": 6,
+      "key": "周年",
+      "score": 1,
+      "count": 1,
+      "id": 37
+    },
+    {
+      "traditional": "戰",
+      "definitions": {
+        "zhan4": {
+          "pinyin": "zhàn",
+          "translations": [
+            "to fight",
+            "fight",
+            "war",
+            "battle"
+          ],
+          "zhuyin": "ㄓㄢ`"
+        }
+      },
+      "simplified": "战",
+      "key": "战",
+      "score": 1,
+      "count": 1,
+      "id": 38
+    },
+    {
+      "traditional": "競技",
+      "definitions": {
+        "jing4 ji4": {
+          "pinyin": "jìng jì",
+          "translations": [
+            "competition of skill (e.g. sports)",
+            "athletics tournament"
+          ],
+          "zhuyin": "ㄐㄧㄥ` ㄐㄧ`"
+        }
+      },
+      "simplified": "竞技",
+      "key": "竞技",
+      "score": 1,
+      "count": 1,
+      "id": 39
+    },
+    {
+      "traditional": "千萬",
+      "definitions": {
+        "qian1 wan4": {
+          "pinyin": "qiān wàn",
+          "translations": [
+            "ten million",
+            "countless",
+            "many",
+            "one must by all means"
+          ],
+          "zhuyin": "ㄑㄧㄢ ㄨㄢ`"
+        }
+      },
+      "simplified": "千万",
+      "hsk": 4,
+      "key": "千万",
+      "score": 1,
+      "count": 1,
+      "id": 40
+    },
+    {
+      "traditional": "的",
+      "definitions": {
+        "de5": {
+          "pinyin": "de",
+          "translations": [
+            "of",
+            "~'s (possessive particle)",
+            "(used after an attribute)",
+            "(used to form a nominal expression)",
+            "(used at the end of a declarative sentence for emphasis)"
+          ],
+          "zhuyin": "ㄉㄜ˙"
+        },
+        "di1": {
+          "pinyin": "dī",
+          "translations": [
+            "see 的士[di1 shi4]"
+          ],
+          "zhuyin": "ㄉㄧ"
+        },
+        "di2": {
+          "pinyin": "dí",
+          "translations": [
+            "really and truly"
+          ],
+          "zhuyin": "ㄉㄧˊ"
+        },
+        "di4": {
+          "pinyin": "dì",
+          "translations": [
+            "aim",
+            "clear"
+          ],
+          "zhuyin": "ㄉㄧ`"
+        }
+      },
+      "hsk": 1,
+      "simplified": "的",
+      "key": "的",
+      "score": 1,
+      "count": 1,
+      "id": 41
+    },
+    {
+      "traditional": "優秀",
+      "definitions": {
+        "you1 xiu4": {
+          "pinyin": "yōu xiù",
+          "translations": [
+            "outstanding",
+            "excellent"
+          ],
+          "zhuyin": "ㄧㄡ ㄒㄧㄡ`"
+        }
+      },
+      "simplified": "优秀",
+      "hsk": 4,
+      "key": "优秀",
+      "score": 1,
+      "count": 1,
+      "id": 42
+    },
+    {
+      "traditional": "這",
+      "definitions": {
+        "zhe4": {
+          "pinyin": "zhè",
+          "translations": [
+            "this",
+            "these",
+            "(commonly pr. [zhei4] before a classifier, esp. in Beijing)"
+          ],
+          "zhuyin": "ㄓㄜ`"
+        }
+      },
+      "simplified": "这",
+      "hsk": 1,
+      "key": "这",
+      "score": 1,
+      "count": 1,
+      "id": 43
+    },
+    {
+      "traditional": "風靡",
+      "definitions": {
+        "feng1 mi3": {
+          "pinyin": "fēng mǐ",
+          "translations": [
+            "fashionable",
+            "popular"
+          ],
+          "zhuyin": "ㄈㄥ ㄇㄧˇ"
+        }
+      },
+      "simplified": "风靡",
+      "key": "风靡",
+      "score": 1,
+      "count": 1,
+      "id": 44
+    },
+    {
+      "traditional": "榮耀",
+      "definitions": {
+        "rong2 yao4": {
+          "pinyin": "róng yào",
+          "translations": [
+            "honor",
+            "glory"
+          ],
+          "zhuyin": "ㄖㄨㄥˊ ㄧㄠ`"
+        }
+      },
+      "simplified": "荣耀",
+      "key": "荣耀",
+      "score": 1,
+      "count": 1,
+      "id": 45
     }
   ],
   "wordusers": [
     {
       "userId": "1",
       "wordId": 1,
-      "count": 2,
+      "count": 3,
       "id": 1
     },
     {
       "userId": "1",
       "wordId": 2,
-      "count": 2,
+      "count": 3,
       "id": 2
     },
     {
       "userId": "1",
       "wordId": 3,
-      "count": 2,
+      "count": 3,
       "id": 3
     },
     {
       "userId": "1",
       "wordId": 4,
-      "count": 2,
+      "count": 3,
       "id": 4
     },
     {
       "userId": "1",
       "wordId": 5,
-      "count": 2,
+      "count": 3,
       "id": 5
     },
     {
       "userId": "1",
       "wordId": 6,
-      "count": 2,
+      "count": 3,
       "id": 6
     },
     {
       "userId": "1",
       "wordId": 7,
-      "count": 2,
+      "count": 3,
       "id": 7
     },
     {
       "userId": "1",
       "wordId": 8,
-      "count": 2,
+      "count": 3,
       "id": 8
     },
     {
       "userId": "1",
       "wordId": 9,
-      "count": 2,
+      "count": 3,
       "id": 9
     },
     {
       "userId": "1",
       "wordId": 10,
-      "count": 2,
+      "count": 3,
       "id": 10
     },
     {
       "userId": "1",
       "wordId": 11,
-      "count": 2,
+      "count": 3,
       "id": 11
     },
     {
       "userId": "1",
       "wordId": 12,
-      "count": 2,
+      "count": 3,
       "id": 12
     },
     {
       "userId": "1",
       "wordId": 13,
-      "count": 2,
+      "count": 3,
       "id": 13
     },
     {
       "userId": "1",
       "wordId": 14,
-      "count": 2,
+      "count": 3,
       "id": 14
     },
     {
       "userId": "1",
       "wordId": 15,
-      "count": 2,
+      "count": 3,
       "id": 15
+    },
+    {
+      "userId": "1",
+      "wordId": 16,
+      "count": 1,
+      "id": 16
+    },
+    {
+      "userId": "1",
+      "wordId": 17,
+      "count": 1,
+      "id": 17
+    },
+    {
+      "userId": "1",
+      "wordId": 18,
+      "count": 1,
+      "id": 18
+    },
+    {
+      "userId": "1",
+      "wordId": 19,
+      "count": 1,
+      "id": 19
+    },
+    {
+      "userId": "1",
+      "wordId": 20,
+      "count": 1,
+      "id": 20
+    },
+    {
+      "userId": "1",
+      "wordId": 21,
+      "count": 1,
+      "id": 21
+    },
+    {
+      "userId": "1",
+      "wordId": 22,
+      "count": 1,
+      "id": 22
+    },
+    {
+      "userId": "1",
+      "wordId": 23,
+      "count": 1,
+      "id": 23
+    },
+    {
+      "userId": "1",
+      "wordId": 24,
+      "count": 1,
+      "id": 24
+    },
+    {
+      "userId": "1",
+      "wordId": 25,
+      "count": 1,
+      "id": 25
+    },
+    {
+      "userId": "1",
+      "wordId": 26,
+      "count": 1,
+      "id": 26
+    },
+    {
+      "userId": "1",
+      "wordId": 27,
+      "count": 1,
+      "id": 27
+    },
+    {
+      "userId": "1",
+      "wordId": 28,
+      "count": 1,
+      "id": 28
+    },
+    {
+      "userId": "1",
+      "wordId": 29,
+      "count": 1,
+      "id": 29
+    },
+    {
+      "userId": "1",
+      "wordId": 30,
+      "count": 1,
+      "id": 30
+    },
+    {
+      "userId": "1",
+      "wordId": 31,
+      "count": 1,
+      "id": 31
+    },
+    {
+      "userId": "1",
+      "wordId": 32,
+      "count": 1,
+      "id": 32
+    },
+    {
+      "userId": "1",
+      "wordId": 33,
+      "count": 1,
+      "id": 33
+    },
+    {
+      "userId": "1",
+      "wordId": 34,
+      "count": 1,
+      "id": 34
+    },
+    {
+      "userId": "1",
+      "wordId": 35,
+      "count": 1,
+      "id": 35
+    },
+    {
+      "userId": "1",
+      "wordId": 36,
+      "count": 1,
+      "id": 36
+    },
+    {
+      "userId": "1",
+      "wordId": 37,
+      "count": 1,
+      "id": 37
+    },
+    {
+      "userId": "1",
+      "wordId": 38,
+      "count": 1,
+      "id": 38
+    },
+    {
+      "userId": "1",
+      "wordId": 39,
+      "count": 1,
+      "id": 39
+    },
+    {
+      "userId": "1",
+      "wordId": 40,
+      "count": 1,
+      "id": 40
+    },
+    {
+      "userId": "1",
+      "wordId": 41,
+      "count": 1,
+      "id": 41
+    },
+    {
+      "userId": "1",
+      "wordId": 42,
+      "count": 1,
+      "id": 42
+    },
+    {
+      "userId": "1",
+      "wordId": 43,
+      "count": 1,
+      "id": 43
+    },
+    {
+      "userId": "1",
+      "wordId": 44,
+      "count": 1,
+      "id": 44
+    },
+    {
+      "userId": "1",
+      "wordId": 45,
+      "count": 1,
+      "id": 45
     }
   ],
   "exercises": []

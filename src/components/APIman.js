@@ -11,7 +11,22 @@ class apiManager {
           },
           body: JSON.stringify({
             name: name,
-            password: password
+            password: password,
+            url: "",
+            time: 0
+          })
+        }).then(e => e.json());
+      }
+
+      patchUser(id, url, time) {
+        return fetch(`http://localhost:5002/users/${id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            url: url,
+            time: time
           })
         }).then(e => e.json());
       }

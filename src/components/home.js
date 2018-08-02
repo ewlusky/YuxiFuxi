@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import API from './APIman'
 import Practice from './practice'
+import Graph from './graph'
 var XMLParser = require('react-xml-parser');
 
 
@@ -8,11 +9,15 @@ class Home extends Component {
     state = {
         vocab: [],
         Uwords: [],
-        url: "",
-        user: [],
+        url: "MSjaP1eV5eQ",
+        userUrl: "",
+        user: "",
         practice: false,
         skip: false,
-        valid: true
+        valid: true,
+        continue: false,
+        vidLength: 60,
+        start: 0
     }
 
     handleFieldChange = (evt) => {
@@ -23,15 +28,35 @@ class Home extends Component {
 
     componentDidMount() {
         this.setState({ practice: false })
-        sessionStorage.setItem('UserId', '1')
-        const user = 1
+        sessionStorage.setItem('UserId', '1') // DELETE THIS 
+        const user = 1 // CHANGE THIS
+        this.setState({ user: user });
         API.getField(`wordusers?_expand=word&&userId=${user}`)
             .then(userWords => {
                 this.setState({ Uwords: userWords });
             })
+        API.getField(`users/${user}`)
+            .then(user => {
+                console.log('TEST USER INFO', user)
+                this.setState({ userUrl: user.url });
+                this.setState({ start: user.time });
+            })
     }
 
-    makeVocab = () => {
+    continue = () => {
+        this.setState({ url: this.state.userUrl });
+        this.makeVocab(this.state.start)
+    }
+
+    finished = () => {
+        API.patchUser(this.state.user, this.state.url, this.state.start + this.state.vidLength)
+        .then(() => {
+            this.setState({ practice: false });
+        })
+
+    }
+
+    makeVocab = (init = 0) => {
         fetch(`http://video.google.com/timedtext?lang=zh-CN&v=${this.state.url}`)
             .catch(err => alert(err))
             .then(e => e.text())
@@ -43,8 +68,12 @@ class Home extends Component {
                 if (trans.children.length < 2) {
                     this.setState({ valid: false });
                 }
+                let initial = 0;
+                // for (let i=0; trans.children[i].attributes.start <= init; i++){
+                //     initial = i;
+                // }
                 let promises = []
-                for (let i = 0; trans.children[i].attributes.start < 30; i++) {
+                for (let i = initial; trans.children[i].attributes.start < this.state.vidLength; i++) {
                     const block = trans.children[i]
                     if (block.value.length === 0) {
                         block.value = "a"
@@ -115,17 +144,17 @@ class Home extends Component {
 
 
         return (
-            <div>
-                <h2>main</h2>
-                <label htmlFor="inputURL">
-                    YouTube URL
-                </label>
+            <div className="home">
+                {this.state.practice && <Practice fin={() => this.finished()} url={this.state.url} dur={this.state.vidLength} start={this.state.start} skip={this.state.skip} words={this.state.vocab} known={this.state.Uwords} />}
+
+                <h2>Data</h2>
+                <Graph />
+                {!this.state.practice && <button onClick={this.continue} className="btn btn-2 btn-2a">JIXU</button>}
                 <input onChange={this.handleFieldChange} type="text"
                     id="url"
-                    placeholder="everything after v="
+                    placeholder="Youtube Video Id (v=...)"
                     required="" autoFocus="" />
-                <button onClick={this.makeVocab}>YUXI</button>
-                {this.state.practice && <Practice url={this.state.url} skip={this.state.skip} words={this.state.vocab} known={this.state.Uwords} />}
+                {!this.state.practice && <button className="btn btn-2 btn-2a" onClick={this.makeVocab}>YUXI</button>}
             </div>
         );
     }
