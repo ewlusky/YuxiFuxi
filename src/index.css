@@ -17,14 +17,14 @@ body {
   height: 35vh;
   width: 35vh;
   margin: auto;
-  background: black;
+  background: radial-gradient(rgba(0, 0, 244, 0.815) , black 90%);
   color:white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 50, 0.815), 0 6px 20px 0 rgba(0, 0, 244, 0.19);
   
 }
 
 
-  .practice {
+.practice {
     display: flex;
     width: 90vw;
     height: 80vh;
@@ -49,6 +49,40 @@ body {
 .url-label{
   padding-right: 0.5%;
 }
+
+.bottom {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.815), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* ------------------------------Input Styling--------------------------- */
+
+input{
+  display:inline-block;
+    width: 300px;
+    padding: 15px 0 15px 12px;
+    font-family: "Arvo";
+    font-weight: 400;
+    color: #377D6A;
+    background: rgba(0,0,0,0.3);
+    border: none;
+    outline: none;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 4px;
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px  1px rgba(255,255,255,0.2);
+    text-indent: 60px;
+    transition: all .3s ease-in-out;
+    position: relative;
+    font-size: 13px;
+}
+input:focus{
+    text-indent: 12px;
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
+}
+
+
 /* ------------------------Experimental Practice------------------- */
 
 .practiceF{
@@ -762,9 +796,9 @@ body {
   margin: 10px;
   padding: 15px 20px 65px 20px;
 }
-.chart.circle {
+/* .chart.circle {
   padding: 15px 20px 40px 20px;
-}
+} */
 @media screen and (max-width: 700px) {
   .chart {
     width: calc(100% - 20px);

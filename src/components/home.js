@@ -148,13 +148,15 @@ class Home extends Component {
                 {this.state.practice && <Practice fin={() => this.finished()} url={this.state.url} dur={this.state.vidLength} start={this.state.start} skip={this.state.skip} words={this.state.vocab} known={this.state.Uwords} />}
 
                 <h2>Data</h2>
-                <Graph />
+                {!this.state.practice && <Graph />}
+                <div className="bottom">
                 {!this.state.practice && <button onClick={this.continue} className="btn btn-2 btn-2a">JIXU</button>}
-                <input onChange={this.handleFieldChange} type="text"
+                {!this.state.practice && <input onChange={this.handleFieldChange} type="text"
                     id="url"
                     placeholder="Youtube Video Id (v=...)"
-                    required="" autoFocus="" />
+                    required="" autoFocus="" />}
                 {!this.state.practice && <button className="btn btn-2 btn-2a" onClick={this.makeVocab}>YUXI</button>}
+                </div>
             </div>
         );
     }
