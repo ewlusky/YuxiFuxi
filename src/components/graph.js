@@ -273,7 +273,7 @@ class Graph extends Component {
         return (
             <div className="charts-container cf">
                 <div className="chart" id="graph-1-container">
-                    <h2 className="title">Hours worked</h2>
+                    <h2 className="title">Words Mastery</h2>
                     <div className="chart-svg">
                         <svg className="chart-line" id="chart-1" viewBox="0 0 80 40">
                             <defs>
@@ -320,13 +320,14 @@ class Graph extends Component {
                 </div>
                 
                 <div className="chart circle" id="circle-1">
-                    <h2 className="title">IBApps Website</h2>
+                    <h2 className="title">Progress</h2>
                     <div className="chart-svg align-center">
                         <h2 className="circle-percentage"></h2>
                         <svg className="chart-circle" id="chart-3" width="50%" viewBox="0 0 100 100">
                             <path className="underlay" d="M5,50 A45,45,0 1 1 95,50 A45,45,0 1 1 5,50" />
                         </svg>
                     </div>
+                    <h2 className="title2">Progress</h2>
                     <div className="triangle green"></div>
                 </div>
                 

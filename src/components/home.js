@@ -56,7 +56,7 @@ class Home extends Component {
 
     }
 
-    makeVocab = (init = 0) => {
+    makeVocab = (vInit = 0) => {
         fetch(`http://video.google.com/timedtext?lang=zh-CN&v=${this.state.url}`)
             .catch(err => alert(err))
             .then(e => e.text())
@@ -69,9 +69,9 @@ class Home extends Component {
                     this.setState({ valid: false });
                 }
                 let initial = 0;
-                // for (let i=0; trans.children[i].attributes.start <= init; i++){
-                //     initial = i;
-                // }
+                for (let i=0; trans.children[i].attributes.start <= vInit; i++){
+                    initial = i;
+                }
                 let promises = []
                 for (let i = initial; trans.children[i].attributes.start < this.state.vidLength; i++) {
                     const block = trans.children[i]
