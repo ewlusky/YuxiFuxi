@@ -7,7 +7,7 @@ import Header from './components/header'
 
 class App extends Component {
   state = {
-    authorized: true
+    authorized: false
   }
 
   authorize = () => {
@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    if (sessionStorage.getItem('userId') != null){
+    if (sessionStorage.getItem('UserId') != null){
       this.authorize();
     }
   }

@@ -134,12 +134,13 @@ class Practice extends Component {
                                 backgroundPadding={6}
                                 styles={{
                                     background: {
-                                        fill: '#3e98c7',
+                                        fill: '#24c1ed', //'#3e98c7',
                                     },
                                     text: {
-                                        fill: '#fff',
-                                        textShadow: '0px 2px 3px rgba(255,255,255,0.5)',
-
+                                        fill: '#000000', //#fff,
+                                        textShadow: '0px 4px 6px #fff',
+                                        fontSize: '20px',
+                                        fontWeight: '900',
                                     },
                                     path: {
                                         stroke: '#fff',
@@ -154,8 +155,8 @@ class Practice extends Component {
                 <div className="practice Pback">
                     <div className="Pinner">
                         <div className="resp-container">
-                            <iframe modestbranding="1" start={this.props.start} end={this.props.start + this.props.dur} className="resp-iframe"
-                                src={`https://www.youtube.com/embed/${this.props.url}`}>
+                            <iframe className="resp-iframe"
+                                src={`https://www.youtube.com/embed/${this.props.url}?start=${this.props.start}&end=${this.props.start+this.props.dur}&modestbranding=1`}>
                             </iframe>
                         </div>
                     </div>

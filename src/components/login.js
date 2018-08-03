@@ -4,36 +4,50 @@ import API from './APIman'
 
 const LoginPage = (props) => {
     const signupWasClickedCallback = (data) => {
-        console.log(data);
-        if (data.password === data.passwordConfirmation) {
-            API.postUser(data.username, data.password)
-                .then(user => {
-                    props.auth()
-                    sessionStorage.setItem('UserId', user.id)
-                })
-        } else {
-            alert('Password does not match');
-        }
+        API.getField(`users?name=${data.username}`)
+            .then(user => {
+                if (user.length > 0) {
+                    alert("That user name is already registered.")
+                } else {
+                    if (data.password === data.passwordConfirmation) {
+                        API.postUser(data.username, data.password)
+                            .then(user => {
+                                props.auth()
+                                sessionStorage.setItem('UserId', user.id)
+                                API.postRecord()
+                            })
+                    } else {
+                        alert('Password does not match');
+                    }
+                }
+            })
+
     };
     const loginWasClickedCallback = (data) => {
         console.log(data);
         API.getField(`users?name=${data.username}`)
-        .then(user => {
-            console.log(user)
-            console.log('passcheck', data.password, user[0].password)
-            if(data.password === user[0].password){
-                props.auth();
-                sessionStorage.setItem('UserId', user[0].id)
+            .then(user => {
+                if (user.length > 0) {
+                    if (data.password === user[0].password) {
+                        props.auth();
+                        sessionStorage.setItem('UserId', user[0].id)
 
-            } else {
-                alert('User name or password not found.')
-            }
-        })
+                    } else {
+                        alert('Password Incorrect.')
+                    }
+                } else {
+                    alert('User name not found.')
+                }
+            })
     };
     const recoverPasswordWasClickedCallback = (data) => {
         API.getField(`users?name=${data.username}`)
             .then(user => {
-                alert(`Your Password is ${user[0].password}`)
+                if (user.length > 0) {
+                    alert(`Your Password is ${user[0].password}`)
+                } else {
+                    alert('Account not found.')
+                }
             })
     };
     return (

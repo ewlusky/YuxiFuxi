@@ -17,7 +17,13 @@ class Home extends Component {
         valid: true,
         continue: false,
         vidLength: 60,
-        start: 0
+        start: 0,
+        userStart: 0,
+        percentage: 0,
+        last: 0,
+        total: 0,
+        record: [0],
+        rid: 0
     }
 
     handleFieldChange = (evt) => {
@@ -28,35 +34,68 @@ class Home extends Component {
 
     componentDidMount() {
         this.setState({ practice: false })
-        sessionStorage.setItem('UserId', '1') // DELETE THIS 
-        const user = 1 // CHANGE THIS
-        this.setState({ user: user });
-        API.getField(`wordusers?_expand=word&&userId=${user}`)
+        const uid = sessionStorage.getItem('UserId') // CHANGE THIS
+        console.log("user GET", uid)
+        this.setState({ user: uid });
+        API.getField(`wordusers?_expand=word&&userId=${uid}`)
             .then(userWords => {
                 this.setState({ Uwords: userWords });
+                this.setState({ total: userWords.length });
             })
-        API.getField(`users/${user}`)
+        API.getField(`users/${uid}`)
             .then(user => {
                 console.log('TEST USER INFO', user)
                 this.setState({ userUrl: user.url });
-                this.setState({ start: user.time });
+                this.setState({ userStart: user.time });
+                this.setState({ last: user.last });
             })
+        API.getField(`records?userId=${uid}`)
+            .then(entry => {
+                console.log("record test", entry)
+                this.setState({ record: entry[0].record });
+                this.setState({ rid: entry[0].id });
+            })
+        let now = Date.now()
+        let day = new Date(now)
+        this.setState({ today: day.getDate() });
     }
 
     continue = () => {
+        console.log("CONTINUE FUNCTION")
         this.setState({ url: this.state.userUrl });
-        this.makeVocab(this.state.start)
+        this.setState({ start: this.state.userStart });
+        this.makeVocab()
     }
 
     finished = () => {
-        API.patchUser(this.state.user, this.state.url, this.state.start + this.state.vidLength)
-        .then(() => {
-            this.setState({ practice: false });
-        })
-
+        console.log('FINISHED')
+        let tempRecord = this.state.record
+        if (this.state.last === this.state.today) {  //won't catch one month apart
+            let score = tempRecord.pop()
+            score += this.state.vocab.length
+            console.log("compare ref", tempRecord, this.state.record)
+            tempRecord.push(score)
+        } else {
+            if (this.state.record.length >= 14) {
+                tempRecord.shift()
+                tempRecord.push(this.state.vocab.length)
+            } else {
+                tempRecord.push(this.state.vocab.length)
+            }
+        }
+        this.setState({ record: tempRecord });
+        API.putRecord(this.state.rid, tempRecord)
+        API.patchUser(this.state.user, this.state.url, (this.state.start + this.state.vidLength))
+            .then(user => {
+                this.setState({ practice: false });
+                this.setState({ userStart: user.time });
+            })
+        console.log("Record", this.state.record)
+        
     }
 
-    makeVocab = (vInit = 0) => {
+    makeVocab = () => {
+        console.log('MAKE VOCAB')
         fetch(`http://video.google.com/timedtext?lang=zh-CN&v=${this.state.url}`)
             .catch(err => alert(err))
             .then(e => e.text())
@@ -69,11 +108,18 @@ class Home extends Component {
                     this.setState({ valid: false });
                 }
                 let initial = 0;
-                for (let i=0; trans.children[i].attributes.start <= vInit; i++){
+                let i = 0;
+                for (let i = 0; trans.children[i].attributes.start <= this.state.start; i++) {
                     initial = i;
                 }
+                let ending = 0;
+                for (let i = 0; trans.children[i].attributes.start <= (this.state.start + this.state.vidLength); i++) {
+                    ending = i;
+                }
+                let percent = Math.floor(((ending) / (trans.children.length + 1)) * 100)
+                this.setState({ percentage: percent });
                 let promises = []
-                for (let i = initial; trans.children[i].attributes.start < this.state.vidLength; i++) {
+                for (let i = initial; i <= ending; i++) {
                     const block = trans.children[i]
                     if (block.value.length === 0) {
                         block.value = "a"
@@ -148,14 +194,14 @@ class Home extends Component {
                 {this.state.practice && <Practice fin={() => this.finished()} url={this.state.url} dur={this.state.vidLength} start={this.state.start} skip={this.state.skip} words={this.state.vocab} known={this.state.Uwords} />}
 
                 <h2>Data</h2>
-                {!this.state.practice && <Graph />}
+                {!this.state.practice && <Graph total={this.state.total} record={this.state.record} percent={this.state.percentage} />}
                 <div className="bottom">
-                {!this.state.practice && <button onClick={this.continue} className="btn btn-2 btn-2a">JIXU</button>}
-                {!this.state.practice && <input onChange={this.handleFieldChange} type="text"
-                    id="url"
-                    placeholder="Youtube Video Id (v=...)"
-                    required="" autoFocus="" />}
-                {!this.state.practice && <button className="btn btn-2 btn-2a" onClick={this.makeVocab}>YUXI</button>}
+                    {!this.state.practice && <button onClick={this.continue} className="btn btn-2 btn-2a">JIXU</button>}
+                    {!this.state.practice && <input onChange={this.handleFieldChange} type="text"
+                        id="url"
+                        placeholder="Youtube Video Id (v=...)"
+                        required="" autoFocus="" />}
+                    {!this.state.practice && <button className="btn btn-2 btn-2a" onClick={this.makeVocab}>YUXI</button>}
                 </div>
             </div>
         );

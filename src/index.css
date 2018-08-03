@@ -18,7 +18,7 @@ body {
   width: 35vh;
   margin: auto;
   background: radial-gradient(rgba(0, 0, 244, 0.815) , black 90%);
-  color:white;
+  color:#48c15e;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 50, 0.815), 0 6px 20px 0 rgba(0, 0, 244, 0.19);
   
 }

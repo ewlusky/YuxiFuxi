@@ -8,16 +8,27 @@ console.log('SNAP', Snap)
 var mina = 0;
 
 class Graph extends Component {
-
+    state = {
+        runnable: false,
+    }
 
     componentDidMount() {
+        this.wholeThing();
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        this.wholeThing();
+    }
+
+    
+
+    wholeThing = () => {
+        
         var chart_h = 40;
         var chart_w = 80;
         var stepX = 77 / 14;
-
-        var chart_1_y = [
-            15, 25, 40, 30, 45, 40, 35, 55, 37, 50, 60, 45, 70, 78
-        ];
+        var chart_1_y = this.props.record
+        console.log('graph test', chart_1_y)
         var chart_2_y = [
             80, 65, 65, 40, 55, 34, 54, 50, 60, 64, 55, 27, 24, 30
         ];
@@ -49,7 +60,7 @@ class Graph extends Component {
         // drawGrid('#chart-2');
         drawGrid('#chart-1');
 
-        function drawLineGraph(graph, points, container, id) {
+        const drawLineGraph = (graph, points, container, id) => {
 
 
             var graph = Snap(graph);
@@ -98,10 +109,10 @@ class Graph extends Component {
                 });
             }
 
-            function calculatePercentage(points, graph) {
+            const calculatePercentage = (points, graph) => {
                 var initValue = points[0];
                 var endValue = points[points.length - 1];
-                var sum = endValue - initValue;
+                var sum = endValue;
                 var prefix;
                 var percentageGain;
                 var stepCount = 1300 / sum;
@@ -116,30 +127,13 @@ class Graph extends Component {
 
                 var percentagePrefix = "";
 
-                function percentageChange() {
-                    percentageGain = initValue / endValue * 100;
-
-                    if (percentageGain > 100) {
-                        console.log('over100');
-                        percentageGain = Math.round(percentageGain * 100 * 10) / 100;
-                    } else if (percentageGain < 100) {
-                        console.log('under100');
-                        percentageGain = Math.round(percentageGain * 10) / 10;
-                    }
-                    if (initValue > endValue) {
-
-                        percentageGain = endValue / initValue * 100 - 100;
-                        percentageGain = percentageGain.toFixed(2);
-
-                        percentagePrefix = "";
-                        $(graph).find('.percentage-value').addClass('negative');
+                const percentageChange = () => {
+                    if (this.props.record.length > 0) {
+                        percentageGain = ((this.props.record[this.props.record.length - 1] / this.props.total) * 100).toFixed(1);
                     } else {
-                        percentagePrefix = "+";
+                        percentageGain = 0;
                     }
-                    if (endValue > initValue) {
-                        percentageGain = endValue / initValue * 100;
-                        percentageGain = Math.round(percentageGain);
-                    }
+
                 };
                 percentageChange();
                 findPrefix();
@@ -227,7 +221,8 @@ class Graph extends Component {
             }
             drawPolygon(segments,id);*/
         }
-        function drawCircle(container, id, progress, parent) {
+        const drawCircle = (container, id, parent) => {
+            let progress = this.props.percent + 1
             var paper = Snap(container);
             var prog = paper.path("M5,50 A45,45,0 1 1 95,50 A45,45,0 1 1 5,50");
             var lineL = prog.getTotalLength();
@@ -261,19 +256,23 @@ class Graph extends Component {
         }
 
         $(window).on('load', function () {
-            drawCircle('#chart-3', 1, 77, '#circle-1');
+            drawCircle('#chart-3', 1, '#circle-1');
             // drawCircle('#chart-4', 2, 53, '#circle-2');
             drawLineGraph('#chart-1', chart_1_y, '#graph-1-container', 1);
             // drawLineGraph('#chart-2', chart_2_y, '#graph-2-container', 2);
         });
     }
 
+    
+
+
 
     render() {
         return (
+
             <div className="charts-container cf">
                 <div className="chart" id="graph-1-container">
-                    <h2 className="title">Words Mastery</h2>
+                    <h2 className="title">Word Mastery</h2>
                     <div className="chart-svg">
                         <svg className="chart-line" id="chart-1" viewBox="0 0 80 40">
                             <defs>
@@ -282,29 +281,29 @@ class Graph extends Component {
                                 </clipPath>
 
                                 <linearGradient id="gradient-1">
-                                    <stop offset="0" stop-color="#00d5bd" />
-                                    <stop offset="100" stop-color="#24c1ed" />
+                                    <stop offset="0" stopColor="#00d5bd" />
+                                    <stop offset="100" stopColor="#24c1ed" />
                                 </linearGradient>
 
                                 <linearGradient id="gradient-2">
-                                    <stop offset="0" stop-color="#954ce9" />
-                                    <stop offset="0.3" stop-color="#954ce9" />
-                                    <stop offset="0.6" stop-color="#24c1ed" />
-                                    <stop offset="1" stop-color="#24c1ed" />
+                                    <stop offset="0" stopColor="#954ce9" />
+                                    <stop offset="0.3" stopColor="#954ce9" />
+                                    <stop offset="0.6" stopColor="#24c1ed" />
+                                    <stop offset="1" stopColor="#24c1ed" />
                                 </linearGradient>
 
 
                                 <linearGradient id="gradient-3" x1="0%" y1="0%" x2="0%" y2="100%">>
-            <stop offset="0" stop-color="rgba(0, 213, 189, 1)" stop-opacity="0.07" />
-                                    <stop offset="0.5" stop-color="rgba(0, 213, 189, 1)" stop-opacity="0.13" />
-                                    <stop offset="1" stop-color="rgba(0, 213, 189, 1)" stop-opacity="0" />
+            <stop offset="0" stopColor="rgba(0, 213, 189, 1)" stopOpacity="0.07" />
+                                    <stop offset="0.5" stopColor="rgba(0, 213, 189, 1)" stopOpacity="0.13" />
+                                    <stop offset="1" stopColor="rgba(0, 213, 189, 1)" stopOpacity="0" />
                                 </linearGradient>
 
 
                                 <linearGradient id="gradient-4" x1="0%" y1="0%" x2="0%" y2="100%">>
-            <stop offset="0" stop-color="rgba(149, 76, 233, 1)" stop-opacity="0.07" />
-                                    <stop offset="0.5" stop-color="rgba(149, 76, 233, 1)" stop-opacity="0.13" />
-                                    <stop offset="1" stop-color="rgba(149, 76, 233, 1)" stop-opacity="0" />
+            <stop offset="0" stopColor="rgba(149, 76, 233, 1)" stopOpacity="0.07" />
+                                    <stop offset="0.5" stopColor="rgba(149, 76, 233, 1)" stopOpacity="0.13" />
+                                    <stop offset="1" stopColor="rgba(149, 76, 233, 1)" stopOpacity="0" />
                                 </linearGradient>
 
                             </defs>
@@ -312,13 +311,13 @@ class Graph extends Component {
                         <h3 className="valueX">time</h3>
                     </div>
                     <div className="chart-values">
-                        <p className="h-value">1689h</p>
+                        <p className="h-value">Total: {this.props.total}</p>
                         <p className="percentage-value"></p>
                         <p className="total-gain"></p>
                     </div>
                     <div className="triangle green"></div>
                 </div>
-                
+
                 <div className="chart circle" id="circle-1">
                     <h2 className="title">Progress</h2>
                     <div className="chart-svg align-center">
@@ -330,7 +329,7 @@ class Graph extends Component {
                     <h2 className="title2">Progress</h2>
                     <div className="triangle green"></div>
                 </div>
-                
+
             </div>
         );
     }
