@@ -44,16 +44,18 @@ class Home extends Component {
             })
         API.getField(`users/${uid}`)
             .then(user => {
-                console.log('TEST USER INFO', user)
+                // console.log('TEST USER INFO', user)
                 this.setState({ userUrl: user.url });
                 this.setState({ userStart: user.time });
                 this.setState({ last: user.last });
+                this.setState({ percentage: user.percent });
             })
+
         API.getField(`records?userId=${uid}`)
             .then(entry => {
-                console.log("record test", entry)
-                this.setState({ record: entry[0].record });
-                this.setState({ rid: entry[0].id });
+                console.log('record check', entry)
+                this.setState({ record: entry[0]? entry[0].record : [] });
+                this.setState({ rid: entry[0]? entry[0].id : 0});
             })
         let now = Date.now()
         let day = new Date(now)
@@ -61,19 +63,19 @@ class Home extends Component {
     }
 
     continue = () => {
-        console.log("CONTINUE FUNCTION")
+        // console.log("CONTINUE FUNCTION")
         this.setState({ url: this.state.userUrl });
         this.setState({ start: this.state.userStart });
         this.makeVocab()
     }
 
     finished = () => {
-        console.log('FINISHED')
+        // console.log('FINISHED')
         let tempRecord = this.state.record
-        if (this.state.last === this.state.today) {  //won't catch one month apart
+        if (false && this.state.last === this.state.today) {  //won't catch one month apart
             let score = tempRecord.pop()
             score += this.state.vocab.length
-            console.log("compare ref", tempRecord, this.state.record)
+            // console.log("compare ref", tempRecord, this.state.record)
             tempRecord.push(score)
         } else {
             if (this.state.record.length >= 14) {
@@ -85,17 +87,22 @@ class Home extends Component {
         }
         this.setState({ record: tempRecord });
         API.putRecord(this.state.rid, tempRecord)
-        API.patchUser(this.state.user, this.state.url, (this.state.start + this.state.vidLength))
+        API.patchUser(this.state.user, this.state.url, (this.state.start + this.state.vidLength), this.state.percentage)
             .then(user => {
                 this.setState({ practice: false });
                 this.setState({ userStart: user.time });
+                API.getField(`wordusers?userId=${user.id}`)
+                    .then(userWords => {
+                        this.setState({ total: userWords.length });
+                    })
             })
         console.log("Record", this.state.record)
-        
+
+
     }
 
     makeVocab = () => {
-        console.log('MAKE VOCAB')
+        // console.log('MAKE VOCAB')
         fetch(`http://video.google.com/timedtext?lang=zh-CN&v=${this.state.url}`)
             .catch(err => alert(err))
             .then(e => e.text())
@@ -103,7 +110,7 @@ class Home extends Component {
             .then(transcript => {
                 this.setState({ valid: true });
                 let trans = new XMLParser().parseFromString(transcript);    // Assume xmlText contains the example XML
-                console.log('transcript', trans)
+                // console.log('transcript', trans)
                 if (trans.children.length < 2) {
                     this.setState({ valid: false });
                 }
@@ -163,7 +170,7 @@ class Home extends Component {
                 Promise.all(promises)
                     .catch(err => console.log(err))
                     .then(results => {
-                        console.log("promise test", results) // could check for duplicates here by going through lists again
+                        // console.log("promise test", results) // could check for duplicates here by going through lists again
                         let merged = [].concat.apply([], results);
                         this.setState({ vocab: merged });
                         if (this.state.valid) {

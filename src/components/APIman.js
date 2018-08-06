@@ -16,12 +16,15 @@ class apiManager {
         password: password,
         url: "",
         time: 0,
+        percent: 0,
         last: day.getDate(),
       })
     }).then(e => e.json());
   }
 
-  patchUser(id, url, time) {
+  patchUser(id, url, time, percent) {
+    let now = Date.now()
+    let day = new Date(now)
     return fetch(`http://localhost:5002/users/${id}`, {
       method: "PATCH",
       headers: {
@@ -29,7 +32,9 @@ class apiManager {
       },
       body: JSON.stringify({
         url: url,
-        time: time
+        time: time,
+        last: day.getDate(),
+        percent: percent
       })
     }).then(e => e.json());
   }

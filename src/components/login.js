@@ -24,14 +24,12 @@ const LoginPage = (props) => {
 
     };
     const loginWasClickedCallback = (data) => {
-        console.log(data);
         API.getField(`users?name=${data.username}`)
             .then(user => {
                 if (user.length > 0) {
                     if (data.password === user[0].password) {
-                        props.auth();
                         sessionStorage.setItem('UserId', user[0].id)
-
+                        props.auth();
                     } else {
                         alert('Password Incorrect.')
                     }

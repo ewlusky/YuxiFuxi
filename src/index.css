@@ -4,10 +4,25 @@ body {
   font-family: sans-serif;
 }
 
+
+
+#main-wrapper {
+  height: 70vh !important;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  width: 50vw !important;
+  max-width: none !important;
+  margin: auto !important;
+}
+
+
+
+
 .header {
   -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  cursor: pointer;
 }
 
 .header-text {
@@ -267,8 +282,8 @@ input:focus{
     border-radius: 10px;
 
 }
-.container:hover .front,        /*  these were both hover .CONTAINER:HOVER*/
-.container:hover .back{
+.containerH .front,        /*  these were both hover .CONTAINER:HOVER*/
+.containerH .back{
     -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
     transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
     -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -312,14 +327,14 @@ input:focus{
             transform-style: preserve-3d;
 }
 
-.container:hover .back{             /*  FLIP HOVER */
+.containerH .back{             /*  FLIP HOVER */
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
-.container:hover .front{          /*   FLIP HOVER */
+.containerH .front{          /*   FLIP HOVER */
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
   -webkit-transform-style: preserve-3d;
@@ -371,11 +386,6 @@ input:focus{
 }
 
 /* -----------------------Flash Card Styles------------------ */
-
-
-/* -------------------------Expirimental style------------------------ */
-
-
 
 
 /* ----------------------------Flash Buttons-------------------------------------- */
@@ -946,3 +956,107 @@ body {
 }
 
 
+#submit-login{
+  display: block;
+    width: auto;
+    font-family: inherit;
+    font-weight: 600;
+    color: inherit;
+    background: inherit;
+    border: none;
+    outline: none;
+    color: black;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 0;
+    box-shadow: none;
+    text-indent: 0;
+    transition: none;
+    position: relative;
+    font-size: 15px;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}
+#submit-login:focus{
+    text-indent: 0;
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
+}
+
+#submit-recover-password{
+  display: block;
+    width: auto;
+    font-family: inherit;
+    font-weight: 600;
+    color: inherit;
+    background: inherit;
+    border: none;
+    outline: none;
+    color: black;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 0;
+    box-shadow: none;
+    text-indent: 0;
+    transition: none;
+    position: relative;
+    font-size: 15px;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}
+#submit-recover-password:focus{
+    text-indent: 0;
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
+}
+
+#submit-signup{
+  display: block;
+    width: auto;
+    font-family: inherit;
+    font-weight: 600;
+    color: inherit;
+    background: inherit;
+    border: none;
+    outline: none;
+    color: black;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 0;
+    box-shadow: none;
+    text-indent: 0;
+    transition: none;
+    position: relative;
+    font-size: 15px;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}
+#submit-signup:focus{
+    text-indent: 0;
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
+}

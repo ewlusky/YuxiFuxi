@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const Flashcard = (props) => {
 		return (
-		<div className="container">
+		<div onClick={() => props.flipIt()} className={props.flip? "container containerH" : "container"}>
 			<div className="front" style={{ backgroundImage: 'url("https://unsplash.it/500/500/")' }}>
 				<div className="inner">
 					<p className="flash-simp">{props.fin?  "" : props.card.simplified}</p>
@@ -12,7 +12,7 @@ const Flashcard = (props) => {
 			</div>
 			<div className="back">
 				<div className="inner">
-		{props.fin? "" : props.card.definitions? Object.keys(props.card.definitions).map(key => <div>{props.card.definitions[key].pinyin + ": " + props.card.definitions[key].translations.map(trans => " " + trans)}</div>) : console.log('null')}
+		{props.fin? "" : props.card.definitions? Object.keys(props.card.definitions).map(key => <div>{props.card.definitions[key].pinyin + ": " + props.card.definitions[key].translations.map(trans => " " + trans)}</div>) : console.log('null') }
 
 				</div>
 				<div className="flash-buttons">

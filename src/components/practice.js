@@ -15,6 +15,12 @@ class Practice extends Component {
         flashCrabs: [],
         currentWord: {},
         percentage: 0,
+        flip: false
+    }
+
+    flipIt = () => {
+        console.log('flipped')
+        this.setState(prevState => ({flip : !prevState.flip }));
     }
 
     shuffle = (cards) => {
@@ -27,9 +33,7 @@ class Practice extends Component {
     }
 
     nextCard = (points) => {
-        console.log('points', points)
         let tempState = Object.assign({}, this.state);  //watch out for memory leak here
-        console.log('next bug', tempState)
         tempState.Cscore += (points - tempState.currentWord.score)
         tempState.currentWord.score = points;
         tempState.percentage = tempState.Cscore ? Math.floor((tempState.Cscore / tempState.possible) * 100) : 0
@@ -50,7 +54,6 @@ class Practice extends Component {
         if (tempState.currentWord.count === 1 && points === 1) {
             tempState.total -= 1;
             const duplicate = this.props.known.filter(entry => entry.word.simplified == tempState.currentWord.simplified)
-            console.log('single word removal test', duplicate)
             if (duplicate.length > 0) {
                 API.putWordUser(duplicate[0].id, duplicate[0].wordId, duplicate[0].count + 1)
             } else {
@@ -77,11 +80,8 @@ class Practice extends Component {
         }
         if (tempState.Cscore >= tempState.possible) {
             tempState.finished = true;
-            console.log('FINISHED')
-            console.log('word list?', this.state.flashCrabs)
             this.state.flashCrabs.forEach(crab => {
                 const duplicate = this.props.known.filter(entry => entry.word.simplified == crab.simplified)
-                console.log('duplicate check', duplicate)
                 if (duplicate.length > 0) {
                     API.putWordUser(duplicate[0].id, duplicate[0].wordId, duplicate[0].count + 1)
                 } else {
@@ -119,12 +119,10 @@ class Practice extends Component {
 
     }
     render() {
-        console.log("render state check", this.state)
-
         return (
             <div className={this.state.finished ? "practiceFH" : "practiceF"}>
                 <div className="practice Pfront" >
-                    <Flashcard card={this.state.currentWord} nextCard={this.nextCard} fin={this.state.finished} />
+                    <Flashcard flipIt={this.flipIt} flip={this.state.flip} card={this.state.currentWord} nextCard={this.nextCard} fin={this.state.finished} />
                     <div className="score-card">
                         <div id='figure' className="progress">
                             <CircularProgressbar

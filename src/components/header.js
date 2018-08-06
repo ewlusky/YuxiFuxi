@@ -5,7 +5,7 @@ export default class Header extends Component {
     return (
     <React.Fragment>
     <div className="header" id="main-image-container">
-    <h1 onClick={this.props.deauth} className="header-text">"Yuxi  預習復習  Fuxi"</h1 >
+    <h1 onClick={this.props.deauth} className="header-text">Yuxi  預習復習  Fuxi</h1 >
     </div>
     </React.Fragment>
     )

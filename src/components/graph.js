@@ -1,11 +1,11 @@
 import $ from "jquery";
 import React, { Component } from 'react';
-// import Snap from 'snapsvg';
+import ReactDOM from 'react-dom'
 
-var Snap = require("imports-loader?this=>window,fix=>module.exports=0!snapsvg/dist/snap.svg.js");
+let Snap = require("imports-loader?this=>window,fix=>module.exports=0!snapsvg/dist/snap.svg.js");
 console.log('SNAP', Snap)
 
-var mina = 0;
+let mina = 0;
 
 class Graph extends Component {
     state = {
@@ -20,16 +20,13 @@ class Graph extends Component {
         this.wholeThing();
     }
 
-    
 
     wholeThing = () => {
-        
-        var chart_h = 40;
-        var chart_w = 80;
-        var stepX = 77 / 14;
-        var chart_1_y = this.props.record
-        console.log('graph test', chart_1_y)
-        var chart_2_y = [
+        let chart_h = 40;
+        let chart_w = 80;
+        let stepX = 77 / 14;
+        let chart_1_y = this.props.record
+        let chart_2_y = [
             80, 65, 65, 40, 55, 34, 54, 50, 60, 64, 55, 27, 24, 30
         ];
 
@@ -40,17 +37,18 @@ class Graph extends Component {
         /* DRAW GRID */
         function drawGrid(graph) {
             var graph = Snap(graph);
-            var g = graph.g();
+            graph['key'] = graph.id
+            let g = graph.g();
             g.attr('id', 'grid');
             for (let i = 0; i <= stepX + 2; i++) {
-                var horizontalLine = graph.path(
+                let horizontalLine = graph.path(
                     "M" + 0 + "," + stepX * i + " " +
                     "L" + 77 + "," + stepX * i);
                 horizontalLine.attr('class', 'horizontal');
                 g.add(horizontalLine);
             };
             for (let i = 0; i <= 14; i++) {
-                var horizontalLine = graph.path(
+                let horizontalLine = graph.path(
                     "M" + stepX * i + "," + 38.7 + " " +
                     "L" + stepX * i + "," + 0)
                 horizontalLine.attr('class', 'vertical');
@@ -62,20 +60,19 @@ class Graph extends Component {
 
         const drawLineGraph = (graph, points, container, id) => {
 
-
             var graph = Snap(graph);
 
 
             /*END DRAW GRID*/
 
             /* PARSE POINTS */
-            var myPoints = [];
-            var shadowPoints = [];
+            let myPoints = [];
+            let shadowPoints = [];
 
             function parseData(points) {
                 for (let i = 0; i < points.length; i++) {
-                    var p = new point();
-                    var pv = points[i] / 100 * 40;
+                    let p = new point();
+                    let pv = points[i] / 100 * 40;
                     p.x = 83.7 / points.length * i + 1;
                     p.y = 40 - pv;
                     if (p.x > 78) {
@@ -85,11 +82,11 @@ class Graph extends Component {
                 }
             }
 
-            var segments = [];
+            let segments = [];
 
             function createSegments(p_array) {
                 for (let i = 0; i < p_array.length; i++) {
-                    var seg = "L" + p_array[i].x + "," + p_array[i].y;
+                    let seg = "L" + p_array[i].x + "," + p_array[i].y;
                     if (i === 0) {
                         seg = "M" + p_array[i].x + "," + p_array[i].y;
                     }
@@ -101,7 +98,7 @@ class Graph extends Component {
                 var line = segments_array.join(" ");
                 var line = graph.path(line);
                 line.attr('id', 'graph-' + id);
-                var lineLength = line.getTotalLength();
+                let lineLength = line.getTotalLength();
 
                 line.attr({
                     'stroke-dasharray': lineLength,
@@ -110,12 +107,12 @@ class Graph extends Component {
             }
 
             const calculatePercentage = (points, graph) => {
-                var initValue = points[0];
-                var endValue = points[points.length - 1];
-                var sum = endValue;
-                var prefix;
-                var percentageGain;
-                var stepCount = 1300 / sum;
+                let initValue = points[0];
+                let endValue = points[points.length - 1];
+                let sum = endValue;
+                let prefix;
+                let percentageGain;
+                let stepCount = 1300 / sum;
 
                 function findPrefix() {
                     if (sum > 0) {
@@ -125,11 +122,12 @@ class Graph extends Component {
                     }
                 }
 
-                var percentagePrefix = "";
+                let percentagePrefix = "+";
 
                 const percentageChange = () => {
                     if (this.props.record.length > 0) {
-                        percentageGain = ((this.props.record[this.props.record.length - 1] / this.props.total) * 100).toFixed(1);
+                        percentageGain = (((this.props.record[this.props.record.length - 1] ) / (this.props.total + 0.0001)) * 100).toFixed(1);
+                        console.log('Percentage Check', this.props.record[this.props.record.length - 1], this.props.total)
                     } else {
                         percentageGain = 0;
                     }
@@ -138,24 +136,24 @@ class Graph extends Component {
                 percentageChange();
                 findPrefix();
 
-                var percentage = $(graph).find('.percentage-value');
-                var totalGain = $(graph).find('.total-gain');
-                var hVal = $(graph).find('.h-value');
+                let percentage = $(graph).find('.percentage-value');
+                let totalGain = $(graph).find('.total-gain');
+                let hVal = $(graph).find('.h-value');
 
                 function count(graph, sum) {
-                    var totalGain = $(graph).find('.total-gain');
-                    var i = 0;
-                    var time = 1300;
-                    var intervalTime = Math.abs(time / sum);
-                    var timerID = 0;
+                    let totalGain = $(graph).find('.total-gain');
+                    let i = 0;
+                    let time = 1300;
+                    let intervalTime = Math.abs(time / sum);
+                    let timerID = 0;
                     if (sum > 0) {
-                        var timerID = setInterval(function () {
+                        let timerID = setInterval(function () {
                             i++;
                             totalGain.text(percentagePrefix + i);
                             if (i === sum) clearInterval(timerID);
                         }, intervalTime);
                     } else if (sum < 0) {
-                        var timerID = setInterval(function () {
+                        let timerID = setInterval(function () {
                             i--;
                             totalGain.text(percentagePrefix + i);
                             if (i === sum) clearInterval(timerID);
@@ -175,21 +173,21 @@ class Graph extends Component {
 
 
             function showValues() {
-                var val1 = $(graph).find('.h-value');
-                var val2 = $(graph).find('.percentage-value');
+                let val1 = $(graph).find('.h-value');
+                let val2 = $(graph).find('.percentage-value');
                 val1.addClass('visible');
                 val2.addClass('visible');
             }
 
             function drawPolygon(segments, id) {
-                var lastel = segments[segments.length - 1];
-                var polySeg = segments.slice();
+                let lastel = segments[segments.length - 1];
+                let polySeg = segments.slice();
                 polySeg.push([78, 38.4], [1, 38.4]);
-                var polyLine = polySeg.join(' ').toString();
-                var replacedString = polyLine.replace(/L/g, '').replace(/M/g, "");
+                let polyLine = polySeg.join(' ').toString();
+                let replacedString = polyLine.replace(/L/g, '').replace(/M/g, "");
 
-                var poly = graph.polygon(replacedString);
-                var clip = graph.rect(-80, 0, 80, 40);
+                let poly = graph.polygon(replacedString);
+                let clip = graph.rect(-80, 0, 80, 40);
                 poly.attr({
                     'id': 'poly-' + id,
                     /*'clipPath':'url(#clip)'*/
@@ -212,41 +210,41 @@ class Graph extends Component {
             /*$('#poly-'+id).attr('class','show');*/
 
             /* function drawPolygon(segments,id){
-              var polySeg = segments;
+              let polySeg = segments;
               polySeg.push([80,40],[0,40]);
-              var polyLine = segments.join(' ').toString();
-              var replacedString = polyLine.replace(/L/g,'').replace(/M/g,"");
-              var poly = graph.polygon(replacedString);
+              let polyLine = segments.join(' ').toString();
+              let replacedString = polyLine.replace(/L/g,'').replace(/M/g,"");
+              let poly = graph.polygon(replacedString);
               poly.attr('id','poly-'+id)
             }
             drawPolygon(segments,id);*/
         }
         const drawCircle = (container, id, parent) => {
-            let progress = this.props.percent + 1
-            var paper = Snap(container);
-            var prog = paper.path("M5,50 A45,45,0 1 1 95,50 A45,45,0 1 1 5,50");
-            var lineL = prog.getTotalLength();
-            var oneUnit = lineL / 100;
-            var toOffset = lineL - oneUnit * progress;
-            var myID = 'circle-graph-' + id;
+            let progress = this.props.percent + 1 // MAKE THIS PLUS 1
+            let paper = Snap(container);
+            let prog = paper.path("M5,50 A45,45,0 1 1 95,50 A45,45,0 1 1 5,50");
+            let lineL = prog.getTotalLength();
+            let oneUnit = lineL / 100;
+            let toOffset = lineL - oneUnit * progress;
+            let myID = 'circle-graph-' + id;
             prog.attr({
                 'stroke-dashoffset': lineL,
                 'stroke-dasharray': lineL,
                 'id': myID
             });
 
-            var animTime = 1300/*progress / 100*/
+            let animTime = 1300/*progress / 100*/
 
             prog.animate({
                 'stroke-dashoffset': toOffset
             }, animTime, mina.easein);
 
-            function countCircle(animtime, parent, progress) {
-                var textContainer = $(parent).find('.circle-percentage');
-                var i = 0;
-                var time = 1300;
-                var intervalTime = Math.abs(time / progress);
-                var timerID = setInterval(function () {
+            const countCircle = (animtime, parent, progress) => {
+                let textContainer = $(parent).find('.circle-percentage');
+                let i = 0;
+                let time = 1300;
+                let intervalTime = Math.abs(time / progress);
+                let timerID = setInterval(function () {
                     i++;
                     textContainer.text(i + "%");
                     if (i === progress) clearInterval(timerID);
@@ -255,22 +253,21 @@ class Graph extends Component {
             countCircle(animTime, parent, progress);
         }
 
-        $(window).on('load', function () {
             drawCircle('#chart-3', 1, '#circle-1');
             // drawCircle('#chart-4', 2, 53, '#circle-2');
             drawLineGraph('#chart-1', chart_1_y, '#graph-1-container', 1);
             // drawLineGraph('#chart-2', chart_2_y, '#graph-2-container', 2);
-        });
+        
     }
 
-    
+
 
 
 
     render() {
         return (
 
-            <div className="charts-container cf">
+            <div onClick={this.wholeThing} className="charts-container cf">
                 <div className="chart" id="graph-1-container">
                     <h2 className="title">Word Mastery</h2>
                     <div className="chart-svg">
@@ -331,6 +328,7 @@ class Graph extends Component {
                 </div>
 
             </div>
+
         );
     }
 }
