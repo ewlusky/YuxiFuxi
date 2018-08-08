@@ -1,9 +1,8 @@
 import $ from "jquery";
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom'
 
 let Snap = require("imports-loader?this=>window,fix=>module.exports=0!snapsvg/dist/snap.svg.js");
-console.log('SNAP', Snap)
+// console.log('SNAP', Snap)
 
 let mina = 0;
 
@@ -22,13 +21,12 @@ class Graph extends Component {
 
 
     wholeThing = () => {
-        let chart_h = 40;
-        let chart_w = 80;
+        
         let stepX = 77 / 14;
         let chart_1_y = this.props.record
-        let chart_2_y = [
-            80, 65, 65, 40, 55, 34, 54, 50, 60, 64, 55, 27, 24, 30
-        ];
+        // let chart_2_y = [
+        //     80, 65, 65, 40, 55, 34, 54, 50, 60, 64, 55, 27, 24, 30
+        // ];
 
         function point(x, y) {
             x: 0;
@@ -67,7 +65,7 @@ class Graph extends Component {
 
             /* PARSE POINTS */
             let myPoints = [];
-            let shadowPoints = [];
+            // let shadowPoints = [];
 
             function parseData(points) {
                 for (let i = 0; i < points.length; i++) {
@@ -107,12 +105,12 @@ class Graph extends Component {
             }
 
             const calculatePercentage = (points, graph) => {
-                let initValue = points[0];
+                // let initValue = points[0];
                 let endValue = points[points.length - 1];
                 let sum = endValue;
                 let prefix;
                 let percentageGain;
-                let stepCount = 1300 / sum;
+                // let stepCount = 1300 / sum;
 
                 function findPrefix() {
                     if (sum > 0) {
@@ -127,7 +125,7 @@ class Graph extends Component {
                 const percentageChange = () => {
                     if (this.props.record.length > 0) {
                         percentageGain = (((this.props.record[this.props.record.length - 1] ) / (this.props.total + 0.0001)) * 100).toFixed(1);
-                        console.log('Percentage Check', this.props.record[this.props.record.length - 1], this.props.total)
+                        // console.log('Percentage Check', this.props.record[this.props.record.length - 1], this.props.total)
                     } else {
                         percentageGain = 0;
                     }
@@ -145,7 +143,7 @@ class Graph extends Component {
                     let i = 0;
                     let time = 1300;
                     let intervalTime = Math.abs(time / sum);
-                    let timerID = 0;
+                    // let timerID = 0;
                     if (sum > 0) {
                         let timerID = setInterval(function () {
                             i++;
@@ -172,15 +170,15 @@ class Graph extends Component {
             }
 
 
-            function showValues() {
-                let val1 = $(graph).find('.h-value');
-                let val2 = $(graph).find('.percentage-value');
-                val1.addClass('visible');
-                val2.addClass('visible');
-            }
+            // function showValues() {
+            //     let val1 = $(graph).find('.h-value');
+            //     let val2 = $(graph).find('.percentage-value');
+            //     val1.addClass('visible');
+            //     val2.addClass('visible');
+            // }
 
             function drawPolygon(segments, id) {
-                let lastel = segments[segments.length - 1];
+                // let lastel = segments[segments.length - 1];
                 let polySeg = segments.slice();
                 polySeg.push([78, 38.4], [1, 38.4]);
                 let polyLine = polySeg.join(' ').toString();

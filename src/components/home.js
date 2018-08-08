@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import API from './APIman'
 import Practice from './practice'
 import Graph from './graph'
+import Tesseract from './tesseract'
 var XMLParser = require('react-xml-parser');
 
 
@@ -53,9 +54,9 @@ class Home extends Component {
 
         API.getField(`records?userId=${uid}`)
             .then(entry => {
-                console.log('record check', entry)
-                this.setState({ record: entry[0]? entry[0].record : [] });
-                this.setState({ rid: entry[0]? entry[0].id : 0});
+                // console.log('record check', entry)
+                this.setState({ record: entry[0] ? entry[0].record : [] });
+                this.setState({ rid: entry[0] ? entry[0].id : 0 });
             })
         let now = Date.now()
         let day = new Date(now)
@@ -96,7 +97,7 @@ class Home extends Component {
                         this.setState({ total: userWords.length });
                     })
             })
-        console.log("Record", this.state.record)
+        // console.log("Record", this.state.record)
 
 
     }
@@ -110,12 +111,11 @@ class Home extends Component {
             .then(transcript => {
                 this.setState({ valid: true });
                 let trans = new XMLParser().parseFromString(transcript);    // Assume xmlText contains the example XML
-                // console.log('transcript', trans)
+                console.log('transcript', trans)
                 if (trans.children.length < 2) {
                     this.setState({ valid: false });
                 }
                 let initial = 0;
-                let i = 0;
                 for (let i = 0; trans.children[i].attributes.start <= this.state.start; i++) {
                     initial = i;
                 }
@@ -131,7 +131,6 @@ class Home extends Component {
                     if (block.value.length === 0) {
                         block.value = "a"
                     }
-                    const timer = block.attributes.start;
                     const prom = fetch(`https://pinyin-rest.pepebecker.com/hanzi/${block.value}`)
                         .catch(err => console.log('pinyin err', err))
                         .then(e => e.json())
@@ -200,7 +199,7 @@ class Home extends Component {
             <div className="home">
                 {this.state.practice && <Practice fin={() => this.finished()} url={this.state.url} dur={this.state.vidLength} start={this.state.start} skip={this.state.skip} words={this.state.vocab} known={this.state.Uwords} />}
 
-                <h2>Data</h2>
+                {!this.state.practice && <Tesseract />}
                 {!this.state.practice && <Graph total={this.state.total} record={this.state.record} percent={this.state.percentage} />}
                 <div className="bottom">
                     {!this.state.practice && <button onClick={this.continue} className="btn btn-2 btn-2a">JIXU</button>}
