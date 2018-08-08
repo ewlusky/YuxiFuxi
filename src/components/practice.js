@@ -19,7 +19,7 @@ class Practice extends Component {
     }
 
     flipIt = () => {
-        console.log('flipped')
+        // console.log('flipped')
         this.setState(prevState => ({flip : !prevState.flip }));
     }
 
@@ -88,7 +88,7 @@ class Practice extends Component {
                     API.getField(`words?simplified=${crab.simplified}`)
                         .then(word => {
                             if (word.length > 0) {
-                                API.postWordUser(word[0].id).then(response => console.log('post user', response))
+                                API.postWordUser(word[0].id)//.then(response => console.log('post user', response))
                             } else {
                                 API.postWord(crab)
                                     .then(word => {

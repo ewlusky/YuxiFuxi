@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import LoginPage from './components/login'
 import Home from './components/home'
@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   authorize = () => {
-    console.log("Authorized")
+    // console.log("Authorized")
     this.setState({ authorized: true });
   }
 
