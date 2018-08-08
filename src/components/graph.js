@@ -1,6 +1,6 @@
 import $ from "jquery";
 import React, { Component } from 'react';
-
+// eslint-disable-next-line
 let Snap = require("imports-loader?this=>window,fix=>module.exports=0!snapsvg/dist/snap.svg.js");
 // console.log('SNAP', Snap)
 
@@ -124,7 +124,12 @@ class Graph extends Component {
 
                 const percentageChange = () => {
                     if (this.props.record.length > 0) {
-                        percentageGain = (((this.props.record[this.props.record.length - 1] ) / (this.props.total + 0.0001)) * 100).toFixed(1);
+                        
+                        let gain = (((this.props.record[this.props.record.length - 1] ) / (this.props.total + 0.0001)) * 100).toFixed(1);
+                        if (gain > 100 || isNaN(gain)){
+                            gain = 0;
+                        }
+                        percentageGain = gain;
                         // console.log('Percentage Check', this.props.record[this.props.record.length - 1], this.props.total)
                     } else {
                         percentageGain = 0;
