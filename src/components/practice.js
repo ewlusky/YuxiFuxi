@@ -20,7 +20,7 @@ class Practice extends Component {
 
     flipIt = () => {
         // console.log('flipped')
-        this.setState(prevState => ({flip : !prevState.flip }));
+        this.setState(prevState => ({ flip: !prevState.flip }));
     }
 
     shuffle = (cards) => {
@@ -123,7 +123,8 @@ class Practice extends Component {
             <div className={this.state.finished ? "practiceFH" : "practiceF"}>
                 <div className="practice Pfront" >
                     <Flashcard flipIt={this.flipIt} flip={this.state.flip} card={this.state.currentWord} nextCard={this.nextCard} fin={this.state.finished} />
-                    <div className="score-card">
+                    <div className="score-card" style={{ background: `radial-gradient(rgba(0, 0, 244, 0.815) , black ${this.state.percentage}%)` }} >
+
                         <div id='figure' className="progress">
                             <CircularProgressbar
                                 percentage={this.state.percentage}
@@ -154,7 +155,7 @@ class Practice extends Component {
                     <div className="Pinner">
                         <div className="resp-container">
                             <iframe className="resp-iframe"
-                                src={`https://www.youtube.com/embed/${this.props.url}?start=${this.props.start}&end=${this.props.start+this.props.dur}&modestbranding=1`}>
+                                src={`https://www.youtube.com/embed/${this.props.url}?start=${this.props.start}&end=${this.props.start + this.props.dur}&modestbranding=1`}>
                             </iframe>
                         </div>
                     </div>

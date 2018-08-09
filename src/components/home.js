@@ -202,12 +202,12 @@ class Home extends Component {
                 {!this.state.practice && <Tesseract />}
                 {!this.state.practice && <Graph total={this.state.total} record={this.state.record} percent={this.state.percentage} />}
                 <div className="bottom">
-                    {!this.state.practice && <button onClick={this.continue} className="btn btn-2 btn-2a">JIXU</button>}
+                    {!this.state.practice && <button onClick={this.continue} className="btn btn-2 btn-2a jixu"><span>JIXU</span></button>}
                     {!this.state.practice && <input onChange={this.handleFieldChange} type="text"
                         id="url"
                         placeholder="Youtube Video Id (v=...)"
                         required="" autoFocus="" />}
-                    {!this.state.practice && <button className="btn btn-2 btn-2a" onClick={this.makeVocab}>YUXI</button>}
+                    {!this.state.practice && <button className="btn btn-2 btn-2a yuxi" onClick={this.makeVocab}><span>YUXI</span></button>}
                 </div>
             </div>
         );

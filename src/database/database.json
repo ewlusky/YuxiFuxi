@@ -4,9 +4,9 @@
       "name": "ewlusky@gmail.com",
       "password": "Faithful1",
       "url": "MSjaP1eV5eQ",
-      "time": 240,
-      "percent": 13,
-      "last": 7,
+      "time": 300,
+      "percent": 17,
+      "last": 9,
       "id": 1
     },
     {
@@ -4417,121 +4417,921 @@
       "score": 1,
       "count": 1,
       "id": 191
+    },
+    {
+      "traditional": "還是",
+      "definitions": {
+        "hai2 shi5": {
+          "pinyin": "hái shi",
+          "translations": [
+            "or",
+            "still",
+            "nevertheless",
+            "had better"
+          ],
+          "zhuyin": "ㄏㄞˊ ㄕ˙"
+        }
+      },
+      "simplified": "还是",
+      "hsk": 3,
+      "key": "还是",
+      "score": 1,
+      "count": 1,
+      "id": 192
+    },
+    {
+      "traditional": "如果",
+      "definitions": {
+        "ru2 guo3": {
+          "pinyin": "rú guǒ",
+          "translations": [
+            "if",
+            "in case",
+            "in the event that"
+          ],
+          "zhuyin": "ㄖㄨˊ ㄍㄨㄛˇ"
+        }
+      },
+      "hsk": 3,
+      "simplified": "如果",
+      "key": "如果",
+      "score": 1,
+      "count": 1,
+      "id": 193
+    },
+    {
+      "traditional": "呢",
+      "definitions": {
+        "ne5": {
+          "pinyin": "ne",
+          "translations": [
+            "particle indicating that a previously asked question is to be applied to the preceding word (\"What about ...?\", \"And ...?\")",
+            "particle for inquiring about location (\"Where is ...?\")",
+            "particle signaling a pause, to emphasize the preceding words and allow the listener time to take them on board (\"ok?\", \"are you with me?\")",
+            "(at the end of a declarative sentence) particle indicating continuation of a state or action",
+            "particle indicating strong affirmation"
+          ],
+          "zhuyin": "ㄋㄜ˙"
+        },
+        "ni2": {
+          "pinyin": "ní",
+          "translations": [
+            "woolen material"
+          ],
+          "zhuyin": "ㄋㄧˊ"
+        }
+      },
+      "hsk": 1,
+      "simplified": "呢",
+      "key": "呢",
+      "score": 1,
+      "count": 1,
+      "id": 194
+    },
+    {
+      "traditional": "炫耀",
+      "definitions": {
+        "xuan4 yao4": {
+          "pinyin": "xuàn yào",
+          "translations": [
+            "dazzling",
+            "to show off",
+            "to flaunt"
+          ],
+          "zhuyin": "ㄒㄩㄢ` ㄧㄠ`"
+        }
+      },
+      "simplified": "炫耀",
+      "key": "炫耀",
+      "score": 1,
+      "count": 1,
+      "id": 195
+    },
+    {
+      "traditional": "手",
+      "definitions": {
+        "shou3": {
+          "pinyin": "shǒu",
+          "translations": [
+            "hand",
+            "(formal) to hold",
+            "person engaged in certain types of work",
+            "person skilled in certain types of work",
+            "personal(ly)",
+            "convenient",
+            "classifier for skill"
+          ],
+          "zhuyin": "ㄕㄡˇ",
+          "classifiers": {
+            "shuang1": {
+              "traditional": "雙",
+              "simplified": "双",
+              "pinyin": "shuāng"
+            },
+            "zhi1": {
+              "traditional": "隻",
+              "simplified": "只",
+              "pinyin": "zhī"
+            }
+          }
+        }
+      },
+      "simplified": "手",
+      "key": "手",
+      "score": 1,
+      "count": 1,
+      "id": 196
+    },
+    {
+      "traditional": "過時",
+      "definitions": {
+        "guo4 shi2": {
+          "pinyin": "guò shí",
+          "translations": [
+            "old-fashioned",
+            "out of date",
+            "to be later than the time stipulated or agreed upon"
+          ],
+          "zhuyin": "ㄍㄨㄛ` ㄕˊ"
+        }
+      },
+      "simplified": "过时",
+      "key": "过时",
+      "score": 1,
+      "count": 1,
+      "id": 197
+    },
+    {
+      "traditional": "喜歡",
+      "definitions": {
+        "xi3 huan5": {
+          "pinyin": "xǐ huan",
+          "translations": [
+            "to like",
+            "to be fond of"
+          ],
+          "zhuyin": "ㄒㄧˇ ㄏㄨㄢ˙"
+        }
+      },
+      "simplified": "喜欢",
+      "hsk": 1,
+      "key": "喜欢",
+      "score": 1,
+      "count": 1,
+      "id": 198
+    },
+    {
+      "traditional": "發揮",
+      "definitions": {
+        "fa1 hui1": {
+          "pinyin": "fā huī",
+          "translations": [
+            "to display",
+            "to exhibit",
+            "to bring out implicit or innate qualities",
+            "to express (a thought or moral)",
+            "to develop (an idea)",
+            "to elaborate (on a theme)"
+          ],
+          "zhuyin": "ㄈㄚ ㄏㄨㄟ"
+        }
+      },
+      "simplified": "发挥",
+      "hsk": 5,
+      "key": "发挥",
+      "score": 1,
+      "count": 1,
+      "id": 199
+    },
+    {
+      "traditional": "這個",
+      "definitions": {
+        "zhe4 ge5": {
+          "pinyin": "zhè ge",
+          "translations": [
+            "this",
+            "this one"
+          ],
+          "zhuyin": "ㄓㄜ` ㄍㄜ˙"
+        }
+      },
+      "simplified": "这个",
+      "key": "这个",
+      "score": 1,
+      "count": 1,
+      "id": 200
+    },
+    {
+      "traditional": "喜歡",
+      "definitions": {
+        "xi3 huan5": {
+          "pinyin": "xǐ huan",
+          "translations": [
+            "to like",
+            "to be fond of"
+          ],
+          "zhuyin": "ㄒㄧˇ ㄏㄨㄢ˙"
+        }
+      },
+      "simplified": "喜欢",
+      "hsk": 1,
+      "key": "喜欢",
+      "score": 1,
+      "count": 1,
+      "id": 201
+    },
+    {
+      "traditional": "會",
+      "definitions": {
+        "hui4": {
+          "pinyin": "huì",
+          "translations": [
+            "can",
+            "to be possible",
+            "to be able to",
+            "will",
+            "to be likely to",
+            "to be sure to",
+            "to assemble",
+            "to meet",
+            "to gather",
+            "to see",
+            "union",
+            "group",
+            "association",
+            "a moment (Taiwan pr. for this sense is [hui3])"
+          ],
+          "zhuyin": "ㄏㄨㄟ`",
+          "classifiers": {
+            "ge4": {
+              "traditional": "個",
+              "simplified": "个",
+              "pinyin": "gè"
+            }
+          }
+        },
+        "kuai4": {
+          "pinyin": "kuài",
+          "translations": [
+            "to balance an account",
+            "accountancy",
+            "accounting"
+          ],
+          "zhuyin": "ㄎㄨㄞ`"
+        }
+      },
+      "simplified": "会",
+      "hsk": 1,
+      "key": "会",
+      "score": 1,
+      "count": 1,
+      "id": 202
+    },
+    {
+      "traditional": "我",
+      "definitions": {
+        "wo3": {
+          "pinyin": "wǒ",
+          "translations": [
+            "I",
+            "me",
+            "my"
+          ],
+          "zhuyin": "ㄨㄛˇ"
+        }
+      },
+      "hsk": 1,
+      "simplified": "我",
+      "key": "我",
+      "score": 1,
+      "count": 1,
+      "id": 203
+    },
+    {
+      "traditional": "把",
+      "definitions": {
+        "ba3": {
+          "pinyin": "bǎ",
+          "translations": [
+            "to hold",
+            "to contain",
+            "to grasp",
+            "to take hold of",
+            "handle",
+            "particle marking the following noun as a direct object",
+            "classifier for objects with handle",
+            "classifier for small objects: handful"
+          ],
+          "zhuyin": "ㄅㄚˇ"
+        },
+        "ba4": {
+          "pinyin": "bà",
+          "translations": [
+            "handle"
+          ],
+          "zhuyin": "ㄅㄚ`"
+        }
+      },
+      "hsk": 3,
+      "simplified": "把",
+      "key": "把",
+      "score": 1,
+      "count": 1,
+      "id": 204
+    },
+    {
+      "traditional": "把",
+      "definitions": {
+        "ba3": {
+          "pinyin": "bǎ",
+          "translations": [
+            "to hold",
+            "to contain",
+            "to grasp",
+            "to take hold of",
+            "handle",
+            "particle marking the following noun as a direct object",
+            "classifier for objects with handle",
+            "classifier for small objects: handful"
+          ],
+          "zhuyin": "ㄅㄚˇ"
+        },
+        "ba4": {
+          "pinyin": "bà",
+          "translations": [
+            "handle"
+          ],
+          "zhuyin": "ㄅㄚ`"
+        }
+      },
+      "hsk": 3,
+      "simplified": "把",
+      "key": "把",
+      "score": 1,
+      "count": 1,
+      "id": 205
+    },
+    {
+      "traditional": "嗎",
+      "definitions": {
+        "ma3": {
+          "pinyin": "mǎ",
+          "translations": [
+            "see 嗎啡|吗啡, morphine"
+          ],
+          "zhuyin": "ㄇㄚˇ"
+        },
+        "ma5": {
+          "pinyin": "ma",
+          "translations": [
+            "(question particle for \"yes-no\" questions)"
+          ],
+          "zhuyin": "ㄇㄚ˙"
+        }
+      },
+      "simplified": "吗",
+      "hsk": 1,
+      "key": "吗",
+      "score": 1,
+      "count": 1,
+      "id": 206
+    },
+    {
+      "traditional": "嗎",
+      "definitions": {
+        "ma3": {
+          "pinyin": "mǎ",
+          "translations": [
+            "see 嗎啡|吗啡, morphine"
+          ],
+          "zhuyin": "ㄇㄚˇ"
+        },
+        "ma5": {
+          "pinyin": "ma",
+          "translations": [
+            "(question particle for \"yes-no\" questions)"
+          ],
+          "zhuyin": "ㄇㄚ˙"
+        }
+      },
+      "simplified": "吗",
+      "hsk": 1,
+      "key": "吗",
+      "score": 1,
+      "count": 1,
+      "id": 207
+    },
+    {
+      "traditional": "抖",
+      "definitions": {
+        "dou3": {
+          "pinyin": "dǒu",
+          "translations": [
+            "to tremble",
+            "to shake out",
+            "to reveal",
+            "to make it in the world"
+          ],
+          "zhuyin": "ㄉㄡˇ"
+        }
+      },
+      "simplified": "抖",
+      "key": "抖",
+      "score": 1,
+      "count": 1,
+      "id": 208
+    },
+    {
+      "traditional": "收",
+      "definitions": {
+        "shou1": {
+          "pinyin": "shōu",
+          "translations": [
+            "to receive",
+            "to accept",
+            "to collect",
+            "to put away",
+            "to restrain",
+            "to stop",
+            "in care of (used on address line after name)"
+          ],
+          "zhuyin": "ㄕㄡ"
+        }
+      },
+      "hsk": 4,
+      "simplified": "收",
+      "key": "收",
+      "score": 1,
+      "count": 1,
+      "id": 209
+    },
+    {
+      "traditional": "名號",
+      "definitions": {
+        "ming2 hao4": {
+          "pinyin": "míng hào",
+          "translations": [
+            "name",
+            "good reputation",
+            "title"
+          ],
+          "zhuyin": "ㄇㄧㄥˊ ㄏㄠ`"
+        }
+      },
+      "simplified": "名号",
+      "key": "名号",
+      "score": 1,
+      "count": 1,
+      "id": 210
+    },
+    {
+      "traditional": "能",
+      "definitions": {
+        "neng2": {
+          "pinyin": "néng",
+          "translations": [
+            "can",
+            "to be able to",
+            "might possibly",
+            "ability",
+            "(physics) energy"
+          ],
+          "zhuyin": "ㄋㄥˊ"
+        }
+      },
+      "hsk": 1,
+      "simplified": "能",
+      "key": "能",
+      "score": 1,
+      "count": 1,
+      "id": 211
+    },
+    {
+      "traditional": "這樣",
+      "definitions": {
+        "zhe4 yang4": {
+          "pinyin": "zhè yàng",
+          "translations": [
+            "this kind of",
+            "so",
+            "this way",
+            "like this",
+            "such"
+          ],
+          "zhuyin": "ㄓㄜ` ㄧㄤ`"
+        }
+      },
+      "simplified": "这样",
+      "key": "这样",
+      "score": 1,
+      "count": 1,
+      "id": 212
+    },
+    {
+      "traditional": "好",
+      "definitions": {
+        "hao3": {
+          "pinyin": "hǎo",
+          "translations": [
+            "good",
+            "well",
+            "proper",
+            "good to",
+            "easy to",
+            "very",
+            "so",
+            "(suffix indicating completion or readiness)",
+            "(of two people) close",
+            "on intimate terms"
+          ],
+          "zhuyin": "ㄏㄠˇ"
+        },
+        "hao4": {
+          "pinyin": "hào",
+          "translations": [
+            "to be fond of",
+            "to have a tendency to",
+            "to be prone to"
+          ],
+          "zhuyin": "ㄏㄠ`"
+        }
+      },
+      "hsk": 1,
+      "simplified": "好",
+      "key": "好",
+      "score": 1,
+      "count": 1,
+      "id": 213
+    },
+    {
+      "traditional": "齣",
+      "definitions": {
+        "chu1": {
+          "pinyin": "chū",
+          "translations": [
+            "variant of 出[chu1] (classifier for plays or chapters of classical novels)"
+          ],
+          "zhuyin": "ㄔㄨ"
+        }
+      },
+      "simplified": "出",
+      "hsk": 2,
+      "key": "出",
+      "score": 1,
+      "count": 1,
+      "id": 214
+    },
+    {
+      "traditional": "卡",
+      "definitions": {
+        "ka3": {
+          "pinyin": "kǎ",
+          "translations": [
+            "to stop",
+            "to block",
+            "card",
+            "calorie",
+            "cassette",
+            "(computing) (coll.) slow"
+          ],
+          "zhuyin": "ㄎㄚˇ",
+          "classifiers": {
+            "zhang1": {
+              "traditional": "張",
+              "simplified": "张",
+              "pinyin": "zhāng"
+            },
+            "pian4": {
+              "traditional": "片",
+              "pinyin": "piàn"
+            }
+          }
+        },
+        "qia3": {
+          "pinyin": "qiǎ",
+          "translations": [
+            "to block",
+            "to be stuck",
+            "to be wedged",
+            "customs station",
+            "a clip",
+            "a fastener",
+            "a checkpost",
+            "Taiwan pr. [ka3]"
+          ],
+          "zhuyin": "ㄑㄧㄚˇ"
+        }
+      },
+      "simplified": "卡",
+      "key": "卡",
+      "score": 1,
+      "count": 1,
+      "id": 215
+    },
+    {
+      "traditional": "我",
+      "definitions": {
+        "wo3": {
+          "pinyin": "wǒ",
+          "translations": [
+            "I",
+            "me",
+            "my"
+          ],
+          "zhuyin": "ㄨㄛˇ"
+        }
+      },
+      "hsk": 1,
+      "simplified": "我",
+      "key": "我",
+      "score": 1,
+      "count": 1,
+      "id": 216
+    },
+    {
+      "traditional": "再次",
+      "definitions": {
+        "zai4 ci4": {
+          "pinyin": "zài cì",
+          "translations": [
+            "one more time",
+            "again",
+            "one more",
+            "once again"
+          ],
+          "zhuyin": "ㄗㄞ` ㄘ`"
+        }
+      },
+      "simplified": "再次",
+      "key": "再次",
+      "score": 1,
+      "count": 1,
+      "id": 217
+    },
+    {
+      "traditional": "它",
+      "definitions": {
+        "ta1": {
+          "pinyin": "tā",
+          "translations": [
+            "it"
+          ],
+          "zhuyin": "ㄊㄚ"
+        }
+      },
+      "hsk": 2,
+      "simplified": "它",
+      "key": "它",
+      "score": 1,
+      "count": 1,
+      "id": 218
+    },
+    {
+      "traditional": "當做",
+      "definitions": {
+        "dang4 zuo4": {
+          "pinyin": "dàng zuò",
+          "translations": [
+            "to treat as",
+            "to regard as",
+            "to look upon as"
+          ],
+          "zhuyin": "ㄉㄤ` ㄗㄨㄛ`"
+        }
+      },
+      "simplified": "当做",
+      "key": "当做",
+      "score": 1,
+      "count": 1,
+      "id": 219
+    },
+    {
+      "traditional": "就是",
+      "definitions": {
+        "jiu4 shi4": {
+          "pinyin": "jiù shì",
+          "translations": [
+            "(emphasizes that sth is precisely or exactly as stated)",
+            "precisely",
+            "exactly",
+            "even",
+            "if",
+            "just like",
+            "in the same way as"
+          ],
+          "zhuyin": "ㄐㄧㄡ` ㄕ`"
+        }
+      },
+      "simplified": "就是",
+      "key": "就是",
+      "score": 1,
+      "count": 1,
+      "id": 220
+    },
+    {
+      "traditional": "雙手",
+      "definitions": {
+        "shuang1 shou3": {
+          "pinyin": "shuāng shǒu",
+          "translations": [
+            "both hands"
+          ],
+          "zhuyin": "ㄕㄨㄤ ㄕㄡˇ"
+        }
+      },
+      "simplified": "双手",
+      "key": "双手",
+      "score": 1,
+      "count": 1,
+      "id": 221
+    },
+    {
+      "traditional": "交出",
+      "definitions": {
+        "jiao1 chu1": {
+          "pinyin": "jiāo chū",
+          "translations": [
+            "to hand over"
+          ],
+          "zhuyin": "ㄐㄧㄠ ㄔㄨ"
+        }
+      },
+      "simplified": "交出",
+      "key": "交出",
+      "score": 1,
+      "count": 1,
+      "id": 222
+    },
+    {
+      "traditional": "實力",
+      "definitions": {
+        "shi2 li4": {
+          "pinyin": "shí lì",
+          "translations": [
+            "strength"
+          ],
+          "zhuyin": "ㄕˊ ㄌㄧ`"
+        }
+      },
+      "simplified": "实力",
+      "hsk": 6,
+      "key": "实力",
+      "score": 1,
+      "count": 1,
+      "id": 223
+    },
+    {
+      "traditional": "一切",
+      "definitions": {
+        "yi1 qie4": {
+          "pinyin": "yī qiè",
+          "translations": [
+            "everything",
+            "every",
+            "all"
+          ],
+          "zhuyin": "ㄧ ㄑㄧㄝ`"
+        }
+      },
+      "hsk": 4,
+      "simplified": "一切",
+      "key": "一切",
+      "score": 1,
+      "count": 1,
+      "id": 224
+    },
+    {
+      "traditional": "賬號",
+      "definitions": {
+        "zhang4 hao4": {
+          "pinyin": "zhàng hào",
+          "translations": [
+            "account",
+            "username"
+          ],
+          "zhuyin": "ㄓㄤ` ㄏㄠ`"
+        }
+      },
+      "simplified": "账号",
+      "key": "账号",
+      "score": 1,
+      "count": 1,
+      "id": 225
     }
   ],
   "wordusers": [
     {
       "userId": "1",
       "wordId": 1,
-      "count": 2,
+      "count": 4,
       "id": 1
     },
     {
       "userId": "1",
       "wordId": 2,
-      "count": 2,
+      "count": 5,
       "id": 2
     },
     {
       "userId": "1",
       "wordId": 3,
-      "count": 3,
+      "count": 5,
       "id": 3
     },
     {
       "userId": "1",
       "wordId": 4,
-      "count": 2,
+      "count": 4,
       "id": 4
     },
     {
       "userId": "1",
       "wordId": 5,
-      "count": 4,
+      "count": 5,
       "id": 5
     },
     {
       "userId": "1",
       "wordId": 6,
-      "count": 2,
+      "count": 5,
       "id": 6
     },
     {
       "userId": "1",
       "wordId": 7,
-      "count": 3,
+      "count": 5,
       "id": 7
     },
     {
       "userId": "1",
       "wordId": 8,
-      "count": 2,
+      "count": 4,
       "id": 8
     },
     {
       "userId": "1",
       "wordId": 9,
-      "count": 3,
+      "count": 5,
       "id": 9
     },
     {
       "userId": "1",
       "wordId": 10,
-      "count": 3,
+      "count": 5,
       "id": 10
     },
     {
       "userId": "1",
       "wordId": 11,
-      "count": 2,
+      "count": 4,
       "id": 11
     },
     {
       "userId": "1",
       "wordId": 16,
-      "count": 4,
+      "count": 5,
       "id": 12
     },
     {
       "userId": "1",
       "wordId": 17,
-      "count": 2,
+      "count": 5,
       "id": 13
     },
     {
       "userId": "1",
       "wordId": 12,
-      "count": 2,
+      "count": 4,
       "id": 14
     },
     {
       "userId": "1",
       "wordId": 13,
-      "count": 2,
+      "count": 4,
       "id": 15
     },
     {
       "userId": "1",
       "wordId": 14,
-      "count": 2,
+      "count": 4,
       "id": 16
     },
     {
       "userId": "1",
       "wordId": 15,
-      "count": 2,
+      "count": 5,
       "id": 17
     },
     {
       "userId": "1",
       "wordId": 20,
-      "count": 2,
+      "count": 5,
       "id": 18
     },
     {
       "userId": "1",
       "wordId": 21,
-      "count": 3,
+      "count": 5,
       "id": 19
     },
     {
@@ -4543,61 +5343,61 @@
     {
       "userId": "1",
       "wordId": 23,
-      "count": 3,
+      "count": 5,
       "id": 21
     },
     {
       "userId": "1",
       "wordId": 24,
-      "count": 2,
+      "count": 4,
       "id": 22
     },
     {
       "userId": "1",
       "wordId": 25,
-      "count": 2,
+      "count": 5,
       "id": 23
     },
     {
       "userId": "1",
       "wordId": 26,
-      "count": 2,
+      "count": 4,
       "id": 24
     },
     {
       "userId": "1",
       "wordId": 27,
-      "count": 2,
+      "count": 4,
       "id": 25
     },
     {
       "userId": "1",
       "wordId": 28,
-      "count": 4,
+      "count": 5,
       "id": 26
     },
     {
       "userId": "1",
       "wordId": 29,
-      "count": 2,
+      "count": 4,
       "id": 27
     },
     {
       "userId": "1",
       "wordId": 30,
-      "count": 4,
+      "count": 5,
       "id": 28
     },
     {
       "userId": "1",
       "wordId": 31,
-      "count": 4,
+      "count": 5,
       "id": 29
     },
     {
       "userId": "1",
       "wordId": 32,
-      "count": 3,
+      "count": 5,
       "id": 30
     },
     {
@@ -4609,43 +5409,43 @@
     {
       "userId": "1",
       "wordId": 18,
-      "count": 2,
+      "count": 4,
       "id": 32
     },
     {
       "userId": "1",
       "wordId": 19,
-      "count": 3,
+      "count": 5,
       "id": 33
     },
     {
       "userId": "1",
       "wordId": 34,
-      "count": 4,
+      "count": 5,
       "id": 34
     },
     {
       "userId": "1",
       "wordId": 35,
-      "count": 3,
+      "count": 5,
       "id": 35
     },
     {
       "userId": "1",
       "wordId": 36,
-      "count": 3,
+      "count": 5,
       "id": 36
     },
     {
       "userId": "1",
       "wordId": 37,
-      "count": 2,
+      "count": 4,
       "id": 37
     },
     {
       "userId": "1",
       "wordId": 38,
-      "count": 3,
+      "count": 5,
       "id": 38
     },
     {
@@ -4657,7 +5457,7 @@
     {
       "userId": "1",
       "wordId": 40,
-      "count": 2,
+      "count": 4,
       "id": 40
     },
     {
@@ -4669,25 +5469,25 @@
     {
       "userId": "1",
       "wordId": 42,
-      "count": 3,
+      "count": 5,
       "id": 42
     },
     {
       "userId": "1",
       "wordId": 44,
-      "count": 2,
+      "count": 5,
       "id": 43
     },
     {
       "userId": "1",
       "wordId": 45,
-      "count": 2,
+      "count": 4,
       "id": 44
     },
     {
       "userId": "1",
       "wordId": 46,
-      "count": 3,
+      "count": 5,
       "id": 45
     },
     {
@@ -4699,7 +5499,7 @@
     {
       "userId": "1",
       "wordId": 43,
-      "count": 2,
+      "count": 5,
       "id": 47
     },
     {
@@ -4795,7 +5595,7 @@
     {
       "userId": "1",
       "wordId": 48,
-      "count": 3,
+      "count": 4,
       "id": 63
     },
     {
@@ -4825,7 +5625,7 @@
     {
       "userId": "1",
       "wordId": 53,
-      "count": 3,
+      "count": 4,
       "id": 68
     },
     {
@@ -4855,7 +5655,7 @@
     {
       "userId": "1",
       "wordId": 57,
-      "count": 2,
+      "count": 3,
       "id": 73
     },
     {
@@ -4867,7 +5667,7 @@
     {
       "userId": "1",
       "wordId": 60,
-      "count": 4,
+      "count": 5,
       "id": 75
     },
     {
@@ -4981,7 +5781,7 @@
     {
       "userId": "1",
       "wordId": 79,
-      "count": 2,
+      "count": 4,
       "id": 94
     },
     {
@@ -5029,19 +5829,19 @@
     {
       "userId": "1",
       "wordId": 87,
-      "count": 2,
+      "count": 4,
       "id": 102
     },
     {
       "userId": "1",
       "wordId": 88,
-      "count": 3,
+      "count": 4,
       "id": 103
     },
     {
       "userId": "1",
       "wordId": 89,
-      "count": 3,
+      "count": 4,
       "id": 104
     },
     {
@@ -5101,7 +5901,7 @@
     {
       "userId": "1",
       "wordId": 99,
-      "count": 2,
+      "count": 3,
       "id": 114
     },
     {
@@ -5203,7 +6003,7 @@
     {
       "userId": "1",
       "wordId": 116,
-      "count": 2,
+      "count": 3,
       "id": 131
     },
     {
@@ -5239,7 +6039,7 @@
     {
       "userId": "1",
       "wordId": 122,
-      "count": 1,
+      "count": 2,
       "id": 137
     },
     {
@@ -5263,7 +6063,7 @@
     {
       "userId": "1",
       "wordId": 125,
-      "count": 1,
+      "count": 3,
       "id": 141
     },
     {
@@ -5293,13 +6093,13 @@
     {
       "userId": "1",
       "wordId": 127,
-      "count": 1,
+      "count": 2,
       "id": 146
     },
     {
       "userId": "1",
       "wordId": 128,
-      "count": 1,
+      "count": 3,
       "id": 147
     },
     {
@@ -5431,7 +6231,7 @@
     {
       "userId": "1",
       "wordId": 147,
-      "count": 2,
+      "count": 4,
       "id": 169
     },
     {
@@ -5461,19 +6261,19 @@
     {
       "userId": "1",
       "wordId": 151,
-      "count": 1,
+      "count": 2,
       "id": 174
     },
     {
       "userId": "1",
       "wordId": 152,
-      "count": 1,
+      "count": 3,
       "id": 175
     },
     {
       "userId": "1",
       "wordId": 153,
-      "count": 2,
+      "count": 4,
       "id": 176
     },
     {
@@ -5521,25 +6321,25 @@
     {
       "userId": "1",
       "wordId": 160,
-      "count": 1,
+      "count": 2,
       "id": 184
     },
     {
       "userId": "1",
       "wordId": 161,
-      "count": 1,
+      "count": 2,
       "id": 185
     },
     {
       "userId": "1",
       "wordId": 163,
-      "count": 1,
+      "count": 3,
       "id": 186
     },
     {
       "userId": "1",
       "wordId": 164,
-      "count": 1,
+      "count": 2,
       "id": 187
     },
     {
@@ -5563,13 +6363,13 @@
     {
       "userId": "1",
       "wordId": 167,
-      "count": 1,
+      "count": 2,
       "id": 191
     },
     {
       "userId": "1",
       "wordId": 168,
-      "count": 1,
+      "count": 3,
       "id": 192
     },
     {
@@ -5659,7 +6459,7 @@
     {
       "userId": "1",
       "wordId": 184,
-      "count": 1,
+      "count": 2,
       "id": 207
     },
     {
@@ -5689,7 +6489,7 @@
     {
       "userId": "1",
       "wordId": 188,
-      "count": 1,
+      "count": 2,
       "id": 212
     },
     {
@@ -5997,6 +6797,210 @@
       "wordId": 44,
       "count": 1,
       "id": 263
+    },
+    {
+      "userId": "1",
+      "wordId": 192,
+      "count": 1,
+      "id": 264
+    },
+    {
+      "userId": "1",
+      "wordId": 193,
+      "count": 1,
+      "id": 265
+    },
+    {
+      "userId": "1",
+      "wordId": 194,
+      "count": 1,
+      "id": 266
+    },
+    {
+      "userId": "1",
+      "wordId": 195,
+      "count": 1,
+      "id": 267
+    },
+    {
+      "userId": "1",
+      "wordId": 196,
+      "count": 1,
+      "id": 268
+    },
+    {
+      "userId": "1",
+      "wordId": 198,
+      "count": 1,
+      "id": 269
+    },
+    {
+      "userId": "1",
+      "wordId": 197,
+      "count": 1,
+      "id": 270
+    },
+    {
+      "userId": "1",
+      "wordId": 199,
+      "count": 1,
+      "id": 271
+    },
+    {
+      "userId": "1",
+      "wordId": 200,
+      "count": 1,
+      "id": 272
+    },
+    {
+      "userId": "1",
+      "wordId": 202,
+      "count": 1,
+      "id": 273
+    },
+    {
+      "userId": "1",
+      "wordId": 203,
+      "count": 1,
+      "id": 274
+    },
+    {
+      "userId": "1",
+      "wordId": 204,
+      "count": 1,
+      "id": 275
+    },
+    {
+      "userId": "1",
+      "wordId": 205,
+      "count": 1,
+      "id": 276
+    },
+    {
+      "userId": "1",
+      "wordId": 206,
+      "count": 1,
+      "id": 277
+    },
+    {
+      "userId": "1",
+      "wordId": 201,
+      "count": 1,
+      "id": 278
+    },
+    {
+      "userId": "1",
+      "wordId": 207,
+      "count": 1,
+      "id": 279
+    },
+    {
+      "userId": "1",
+      "wordId": 208,
+      "count": 1,
+      "id": 280
+    },
+    {
+      "userId": "1",
+      "wordId": 209,
+      "count": 1,
+      "id": 281
+    },
+    {
+      "userId": "1",
+      "wordId": 210,
+      "count": 1,
+      "id": 282
+    },
+    {
+      "userId": "1",
+      "wordId": 211,
+      "count": 1,
+      "id": 283
+    },
+    {
+      "userId": "1",
+      "wordId": 212,
+      "count": 1,
+      "id": 284
+    },
+    {
+      "userId": "1",
+      "wordId": 213,
+      "count": 1,
+      "id": 285
+    },
+    {
+      "userId": "1",
+      "wordId": 214,
+      "count": 1,
+      "id": 286
+    },
+    {
+      "userId": "1",
+      "wordId": 215,
+      "count": 1,
+      "id": 287
+    },
+    {
+      "userId": "1",
+      "wordId": 216,
+      "count": 1,
+      "id": 288
+    },
+    {
+      "userId": "1",
+      "wordId": 217,
+      "count": 1,
+      "id": 289
+    },
+    {
+      "userId": "1",
+      "wordId": 218,
+      "count": 1,
+      "id": 290
+    },
+    {
+      "userId": "1",
+      "wordId": 219,
+      "count": 1,
+      "id": 291
+    },
+    {
+      "userId": "1",
+      "wordId": 220,
+      "count": 1,
+      "id": 292
+    },
+    {
+      "userId": "1",
+      "wordId": 221,
+      "count": 1,
+      "id": 293
+    },
+    {
+      "userId": "1",
+      "wordId": 222,
+      "count": 1,
+      "id": 294
+    },
+    {
+      "userId": "1",
+      "wordId": 223,
+      "count": 1,
+      "id": 295
+    },
+    {
+      "userId": "1",
+      "wordId": 224,
+      "count": 1,
+      "id": 296
+    },
+    {
+      "userId": "1",
+      "wordId": 225,
+      "count": 1,
+      "id": 297
     }
   ],
   "records": [
@@ -6009,7 +7013,8 @@
         47,
         86,
         61,
-        92
+        92,
+        72
       ],
       "id": 1
     },
