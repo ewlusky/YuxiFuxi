@@ -11,7 +11,7 @@ const Flashcard = (props) => {
 		utterThis.volume = 0.4; // 0 to 1
 		utterThis.rate = 0.9; // 0.1 to 10
 		utterThis.pitch = 1; //0 to 2
-		utterThis.text = props.card.traditional;
+		utterThis.text = props.card? props.card.traditional : "";
 		utterThis.lang = 'zh-CN';
 		synth.speak(utterThis)
 	}, 800)

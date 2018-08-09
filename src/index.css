@@ -30,15 +30,16 @@ body {
 
 .header-text {
   padding-bottom: 2vh;
+  margin: 0;
+  padding: 0;
 }
 .score-card {
   height: 35vh;
   width: 35vh;
   margin: auto;
-  background: radial-gradient(rgba(0, 0, 244, 0.815) , black 90%);
+  /* background: radial-gradient(rgba(0, 0, 244, 0.815) , black 100%); */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 50, 0.815), 0 6px 20px 0 rgba(0, 0, 244, 0.19);
   border-radius: 50%;
-  
 }
 
 .CircularProgressbar-path {
@@ -50,9 +51,20 @@ body {
 
 
 
+
 .CircularProgressbar-text{
+  visibility: hidden;
+  fill: white !important;
+  pointer-events: all;
+  cursor: none;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-shadow: rgb(105, 111, 189) 0px 4px 6px !important;
+}
+
+.CircularProgressbar-text:hover{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-shadow: rgb(105, 111, 189) 0px 4px 6px !important;
+  visibility: visible;
 }
 
 
@@ -83,8 +95,17 @@ body {
 }
 
 .bottom {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.815), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.815), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: sticky;
 }
+
+/* .bottom:hover {
+  padding: 10px;
+  box-shadow:
+      0 0 50px #fff,         
+      -10px 0 80px #f0f,    
+      10px 0 80px #0ff; 
+} */
 
 
 /* ------------------------------Input Styling--------------------------- */
@@ -642,7 +663,8 @@ div:hover.glass3hover {
 	box-shadow: 0 6px #ab3c3c;
 	-webkit-transition: none;
 	-moz-transition: none;
-	transition: none;
+  transition: none;
+  bottom: 2px;
 }
 
 /* Button 2a */
@@ -652,7 +674,44 @@ div:hover.glass3hover {
 
 .btn-2a:hover {
 	box-shadow: 0 4px #ab3c3c;
-	top: 2px;
+  /* top: 2px; */
+  bottom: 0;
+}
+
+.jixu:hover span {
+  display:none;
+}
+
+.jixu:hover {
+  padding: 25px 54px;
+}
+
+.jixu:hover:before{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  letter-spacing: 1px;
+  content: "Continue"
+}
+
+.yuxi:hover span {
+  display:none;
+}
+
+.yuxi:hover {
+  padding: 25px 60px;
+}
+
+.yuxi:hover:before{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  letter-spacing: 1px;
+  content: "Preview"
 }
 
 .btn-2a:active {
@@ -808,7 +867,7 @@ body {
 .charts-container {
   padding: 20px;
   width: 100%;
-  max-width: 1024px;
+  /* max-width: 1024px; */
   display: inline-block;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -833,7 +892,7 @@ body {
 /* .chart.circle {
   padding: 15px 20px 40px 20px;
 } */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 7000px) {
   .chart {
     width: calc(100% - 20px);
   }
@@ -845,13 +904,13 @@ body {
 }
 
 .title {
-  font-size: 22px;
+  font-size: 2rem;
   margin-bottom: 12px;
 }
 
 .title2 {
   position: absolute;
-  font-size: 22px;
+  font-size: 1.3rem;
 }
 
 .chart-circle {
@@ -866,7 +925,7 @@ body {
 .circle-percentage {
   position: absolute;
   color: white;
-  font-size: 48px;
+  font-size: 5vw;
   left: 51%;
   top: 29%;
   -moz-transform: translate(-50%, -50%);
@@ -889,12 +948,12 @@ body {
 }
 
 .valueX {
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 .chart-values {
   text-align: right;
-  font-size: 18px;
+  font-size: 1.4rem;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -932,7 +991,7 @@ body {
 
 .total-gain {
   color: white;
-  font-size: 48px;
+  font-size: 3rem;
   margin: 0;
 }
 
