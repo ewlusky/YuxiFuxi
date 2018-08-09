@@ -1,9 +1,9 @@
-Clone repo
-In root
+## Clone repo
+## In root
   npm install
-In /src/database
+## In /src/database
   json-server -p 5002 database.json
-In root
+## In root
   npm start
 
   
