@@ -1,12 +1,12 @@
 class apiManager {
   getField(resource) {
-    return fetch(`http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/${resource}`).then(e => e.json());
+    return fetch(`http://yuxifuxi.net/${resource}`).then(e => e.json());
   }
 
   postUser(name, password) {
     let now = Date.now()
     let day = new Date(now)
-    return fetch("http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/users", {
+    return fetch("http://yuxifuxi.net/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -22,10 +22,10 @@ class apiManager {
     }).then(e => e.json());
   }
 
-  patchUser(id, url, time, percent) {   //ec2-18-220-80-235.us-east-2.compute.amazonaws.com
+  patchUser(id, url, time, percent) {   //yuxifuxi.net
     let now = Date.now()
     let day = new Date(now)
-    return fetch(`http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/users/${id}`, {
+    return fetch(`http://yuxifuxi.net/users/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -40,7 +40,7 @@ class apiManager {
   }
 
   postWord(word) {
-    return fetch("http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/words", {
+    return fetch("http://yuxifuxi.net/words", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -50,7 +50,7 @@ class apiManager {
   }
 
   postWordUser(wordId) {
-    return fetch("http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/wordusers", {
+    return fetch("http://yuxifuxi.net/wordusers", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -64,7 +64,7 @@ class apiManager {
   }
 
   putWordUser(id, wordId, count) {
-    return fetch(`http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/wordusers/${id}`, {
+    return fetch(`http://yuxifuxi.net/wordusers/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -78,7 +78,7 @@ class apiManager {
   }
 
   postRecord() {
-    return fetch("http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/records", {
+    return fetch("http://yuxifuxi.net/records", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -91,7 +91,7 @@ class apiManager {
   }
 
   putRecord(id, record) {
-    return fetch(`http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/records/${id}`, {
+    return fetch(`http://yuxifuxi.net/records/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
