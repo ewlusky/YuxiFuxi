@@ -1,12 +1,12 @@
 class apiManager {
   getField(resource) {
-    return fetch(`http://localhost:5002/${resource}`).then(e => e.json());
+    return fetch(`http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/${resource}`).then(e => e.json());
   }
 
   postUser(name, password) {
     let now = Date.now()
     let day = new Date(now)
-    return fetch("http://localhost:5002/users", {
+    return fetch("http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -22,10 +22,10 @@ class apiManager {
     }).then(e => e.json());
   }
 
-  patchUser(id, url, time, percent) {
+  patchUser(id, url, time, percent) {   //ec2-18-220-80-235.us-east-2.compute.amazonaws.com
     let now = Date.now()
     let day = new Date(now)
-    return fetch(`http://localhost:5002/users/${id}`, {
+    return fetch(`http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/users/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -40,7 +40,7 @@ class apiManager {
   }
 
   postWord(word) {
-    return fetch("http://localhost:5002/words", {
+    return fetch("http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/words", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -50,7 +50,7 @@ class apiManager {
   }
 
   postWordUser(wordId) {
-    return fetch("http://localhost:5002/wordusers", {
+    return fetch("http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/wordusers", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -64,7 +64,7 @@ class apiManager {
   }
 
   putWordUser(id, wordId, count) {
-    return fetch(`http://localhost:5002/wordusers/${id}`, {
+    return fetch(`http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/wordusers/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -78,7 +78,7 @@ class apiManager {
   }
 
   postRecord() {
-    return fetch("http://localhost:5002/records", {
+    return fetch("http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/records", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -91,7 +91,7 @@ class apiManager {
   }
 
   putRecord(id, record) {
-    return fetch(`http://localhost:5002/records/${id}`, {
+    return fetch(`http://ec2-18-220-80-235.us-east-2.compute.amazonaws.com/records/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
