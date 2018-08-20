@@ -3,6 +3,7 @@ import API from './APIman'
 import Practice from './practice'
 import Graph from './graph'
 import Tesseract from './tesseract'
+import Selector from './selector'
 var XMLParser = require('react-xml-parser');
 
 
@@ -24,13 +25,19 @@ class Home extends Component {
         last: 0,
         total: 0,
         record: [0],
-        rid: 0
+        rid: 0,
+        lang: "zh-CN"
     }
 
     handleFieldChange = (evt) => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
+    }
+
+    changeLang = (language) => {
+        console.log("CHANGE LANGUAGE", language)
+        this.setState({ lang: language });
     }
 
     componentDidMount() {
@@ -104,7 +111,7 @@ class Home extends Component {
 
     makeVocab = () => {
         // console.log('MAKE VOCAB')
-        fetch(`http://video.google.com/timedtext?lang=zh-CN&v=${this.state.url}`)
+        fetch(`http://video.google.com/timedtext?lang=${this.state.lang}&v=${this.state.url}`)
             .catch(err => alert(err))
             .then(e => e.text())
             // .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
@@ -131,6 +138,7 @@ class Home extends Component {
                     if (block.value.length === 0) {
                         block.value = "a"
                     }
+                    block.value = block.value.replace(' ', '');
                     const prom = fetch(`https://pinyin-rest.pepebecker.com/hanzi/${block.value}`)
                         .catch(err => console.log('pinyin err', err))
                         .then(e => e.json())
@@ -202,6 +210,7 @@ class Home extends Component {
                 {!this.state.practice && <Tesseract />}
                 {!this.state.practice && <Graph total={this.state.total} record={this.state.record} percent={this.state.percentage} />}
                 <div className="bottom">
+                    {!this.state.practice && <Selector change={this.changeLang} />}
                     {!this.state.practice && <button onClick={this.continue} className="btn btn-2 btn-2a jixu"><span>JIXU</span></button>}
                     {!this.state.practice && <input onChange={this.handleFieldChange} type="text"
                         id="url"

@@ -326,7 +326,6 @@ class Graph extends Component {
                             <path className="underlay" d="M5,50 A45,45,0 1 1 95,50 A45,45,0 1 1 5,50" />
                         </svg>
                     </div>
-                    <h2 className="title2">Progress</h2>
                     <div className="triangle green"></div>
                 </div>
 

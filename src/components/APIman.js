@@ -1,12 +1,12 @@
 class apiManager {
   getField(resource) {
-    return fetch(`http://yuxifuxi.net/${resource}`).then(e => e.json());
+    return fetch(`http://localhost:5002/${resource}`).then(e => e.json());
   }
 
   postUser(name, password) {
     let now = Date.now()
     let day = new Date(now)
-    return fetch("http://yuxifuxi.net/users", {
+    return fetch("http://localhost:5002/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -22,10 +22,10 @@ class apiManager {
     }).then(e => e.json());
   }
 
-  patchUser(id, url, time, percent) {   //yuxifuxi.net
+  patchUser(id, url, time, percent) {   //
     let now = Date.now()
     let day = new Date(now)
-    return fetch(`http://yuxifuxi.net/users/${id}`, {
+    return fetch(`http://localhost:5002/users/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -40,7 +40,7 @@ class apiManager {
   }
 
   postWord(word) {
-    return fetch("http://yuxifuxi.net/words", {
+    return fetch("http://localhost:5002/words", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -50,7 +50,7 @@ class apiManager {
   }
 
   postWordUser(wordId) {
-    return fetch("http://yuxifuxi.net/wordusers", {
+    return fetch("http://localhost:5002/wordusers", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -64,7 +64,7 @@ class apiManager {
   }
 
   putWordUser(id, wordId, count) {
-    return fetch(`http://yuxifuxi.net/wordusers/${id}`, {
+    return fetch(`http://localhost:5002/wordusers/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -78,7 +78,7 @@ class apiManager {
   }
 
   postRecord() {
-    return fetch("http://yuxifuxi.net/records", {
+    return fetch("http://localhost:5002/records", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -91,7 +91,7 @@ class apiManager {
   }
 
   putRecord(id, record) {
-    return fetch(`http://yuxifuxi.net/records/${id}`, {
+    return fetch(`http://localhost:5002/records/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
