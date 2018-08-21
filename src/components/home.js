@@ -4,7 +4,7 @@ import Practice from './practice'
 import Graph from './graph'
 import Tesseract from './tesseract'
 import Selector from './selector'
-var XMLParser = require('react-xml-parser');
+import XMLParser from 'react-xml-parser';
 
 
 class Home extends Component {
@@ -139,6 +139,7 @@ class Home extends Component {
                         block.value = "a"
                     }
                     block.value = block.value.replace(' ', '');
+
                     const prom = fetch(`https://pinyin-rest.pepebecker.com/hanzi/${block.value}`)
                         .catch(err => console.log('pinyin err', err))
                         .then(e => e.json())
@@ -179,6 +180,249 @@ class Home extends Component {
                     .then(results => {
                         // console.log("promise test", results) // could check for duplicates here by going through lists again
                         let merged = [].concat.apply([], results);
+                        merged = [{
+                            "traditional": "輝煌",
+                            "definitions": {
+                                "hui1 huang2": {
+                                    "pinyin": "huī huáng",
+                                    "translations": [
+                                        "splendid",
+                                        "glorious"
+                                    ],
+                                    "zhuyin": "ㄏㄨㄟ ㄏㄨㄤˊ"
+                                }
+                            },
+                            "simplified": "辉煌",
+                            "hsk": 6,
+                            "key": "辉煌",
+                            "score": 0,
+                            "count": 0,
+                            "id": 119
+                        },
+                        {
+                            "traditional": "連",
+                            "definitions": {
+                                "lian2": {
+                                    "pinyin": "lián",
+                                    "translations": [
+                                        "to link",
+                                        "to join",
+                                        "to connect",
+                                        "continuously",
+                                        "in succession",
+                                        "including",
+                                        "(used with 也, 都 etc) even",
+                                        "company (military)"
+                                    ],
+                                    "zhuyin": "ㄌㄧㄢˊ"
+                                }
+                            },
+                            "simplified": "连",
+                            "hsk": 4,
+                            "key": "连",
+                            "score": 0,
+                            "count": 0,
+                            "id": 120
+                        },
+                        {
+                            "traditional": "稱號",
+                            "definitions": {
+                                "cheng1 hao4": {
+                                    "pinyin": "chēng hào",
+                                    "translations": [
+                                        "name",
+                                        "term of address",
+                                        "title"
+                                    ],
+                                    "zhuyin": "ㄔㄥ ㄏㄠ`"
+                                }
+                            },
+                            "simplified": "称号",
+                            "hsk": 6,
+                            "key": "称号",
+                            "score": 0,
+                            "count": 0,
+                            "id": 121
+                        },
+                        {
+                            "traditional": "整個",
+                            "definitions": {
+                                "zheng3 ge4": {
+                                    "pinyin": "zhěng gè",
+                                    "translations": [
+                                        "whole",
+                                        "entire",
+                                        "total"
+                                    ],
+                                    "zhuyin": "ㄓㄥˇ ㄍㄜ`"
+                                }
+                            },
+                            "simplified": "整个",
+                            "hsk": 5,
+                            "key": "整个",
+                            "score": 0,
+                            "count": 0,
+                            "id": 122
+                        },
+                        {
+                            "traditional": "區",
+                            "definitions": {
+                                "ou1": {
+                                    "pinyin": "ōu",
+                                    "translations": [
+                                        "surname Ou"
+                                    ],
+                                    "zhuyin": "ㄡ"
+                                },
+                                "qu1": {
+                                    "pinyin": "qū",
+                                    "translations": [
+                                        "area",
+                                        "region",
+                                        "district",
+                                        "small",
+                                        "distinguish"
+                                    ],
+                                    "zhuyin": "ㄑㄩ",
+                                    "classifiers": {
+                                        "ge4": {
+                                            "traditional": "個",
+                                            "simplified": "个",
+                                            "pinyin": "gè"
+                                        }
+                                    }
+                                }
+                            },
+                            "simplified": "区",
+                            "key": "区",
+                            "score": 0,
+                            "count": 0,
+                            "id": 123
+                        },
+                        {
+                            "traditional": "降臨",
+                            "definitions": {
+                                "jiang4 lin2": {
+                                    "pinyin": "jiàng lín",
+                                    "translations": [
+                                        "to descend",
+                                        "to arrive",
+                                        "to come"
+                                    ],
+                                    "zhuyin": "ㄐㄧㄤ` ㄌㄧㄣˊ"
+                                }
+                            },
+                            "simplified": "降临",
+                            "hsk": 6,
+                            "key": "降临",
+                            "score": 0,
+                            "count": 0,
+                            "id": 124
+                        },
+                        {
+                            "traditional": "就",
+                            "definitions": {
+                                "jiu4": {
+                                    "pinyin": "jiù",
+                                    "translations": [
+                                        "at once",
+                                        "right away",
+                                        "only",
+                                        "just (emphasis)",
+                                        "as early as",
+                                        "already",
+                                        "as soon as",
+                                        "then",
+                                        "in that case",
+                                        "as many as",
+                                        "even if",
+                                        "to approach",
+                                        "to move towards",
+                                        "to undertake",
+                                        "to engage in",
+                                        "to suffer",
+                                        "subjected to",
+                                        "to accomplish",
+                                        "to take advantage of",
+                                        "to go with (of foods)",
+                                        "with regard to",
+                                        "concerning"
+                                    ],
+                                    "zhuyin": "ㄐㄧㄡ`"
+                                }
+                            },
+                            "hsk": 2,
+                            "simplified": "就",
+                            "key": "就",
+                            "score": 0,
+                            "count": 0,
+                            "id": 125
+                        },
+                        {
+                            "traditional": "共同",
+                            "definitions": {
+                                "gong4 tong2": {
+                                    "pinyin": "gòng tóng",
+                                    "translations": [
+                                        "common",
+                                        "joint",
+                                        "jointly",
+                                        "together",
+                                        "collaborative"
+                                    ],
+                                    "zhuyin": "ㄍㄨㄥ` ㄊㄨㄥˊ"
+                                }
+                            },
+                            "hsk": 4,
+                            "simplified": "共同",
+                            "key": "共同",
+                            "score": 0,
+                            "count": 0,
+                            "id": 126
+                        },
+                        {
+                            "traditional": "響徹",
+                            "definitions": {
+                                "xiang3 che4": {
+                                    "pinyin": "xiǎng chè",
+                                    "translations": [
+                                        "to resound",
+                                        "to resonate"
+                                    ],
+                                    "zhuyin": "ㄒㄧㄤˇ ㄔㄜ`"
+                                }
+                            },
+                            "simplified": "响彻",
+                            "key": "响彻",
+                            "score": 0,
+                            "count": 0,
+                            "id": 127
+                        },
+                        {
+                            "traditional": "讓",
+                            "definitions": {
+                                "rang4": {
+                                    "pinyin": "ràng",
+                                    "translations": [
+                                        "to yield",
+                                        "to permit",
+                                        "to let sb do sth",
+                                        "to have sb do sth",
+                                        "to make sb (feel sad etc)",
+                                        "by (indicates the agent in a passive clause, like 被[bei4])"
+                                    ],
+                                    "zhuyin": "ㄖㄤ`"
+                                }
+                            },
+                            "simplified": "让",
+                            "hsk": 2,
+                            "key": "让",
+                            "score": 0,
+                            "count": 0,
+                            "id": 128
+                        }
+                        ]
+                        
                         this.setState({ vocab: merged });
                         if (this.state.valid) {
                             if (this.state.vocab.length > 0) {

@@ -182,7 +182,7 @@ class Tesseract extends Component {
 
     render() {
         return (
-            <canvas id="logo-canvas"></canvas>
+            <a target="_blank" href="https://www.youtube.com/playlist?list=PLUopoMgYFRYnhkzcTxA7_wHqYb55BVRI4"><canvas id="logo-canvas"></canvas></a>
         );
     }
 }

@@ -580,7 +580,7 @@ div.glass3hi:after {
   line-height: 37px;
   border-radius: 6px;
   font-size: 20px;
-  color: #ccc;
+  color: rgb(98, 198, 255);
   background: radial-gradient(
     ellipse at center,
     rgba(255,255,255,1) 0%,
